@@ -43,3 +43,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     group = highlight_group,
     pattern = "*",
 })
+
+-- vim.g.loaded_netrwPlugin = 1
+-- vim.g.loaded_netrw = 1

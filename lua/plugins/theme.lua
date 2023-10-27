@@ -36,6 +36,10 @@ return {
                     bg = "none",
                     fg = c.bg_dark,
                 }
+                hl.NeoTreeNormal = {
+                    bg = "none",
+                    fg = c.fg_dark,
+                }
             end,
         }
         vim.cmd [[colorscheme tokyonight]]
