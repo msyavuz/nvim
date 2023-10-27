@@ -17,11 +17,14 @@ return {
         require("neo-tree").setup {
             sources = { "filesystem", "buffers", "git_status", "document_symbols" },
             window = {
-                position = "current",
+                position = "left",
                 width = 30,
             },
             filesystem = {
+                bind_to_cwd = false,
+                follow_current_file = { enabled = true },
                 hijack_netrw_behaviour = "open_current",
+                use_libuv_file_watcher = true,
             },
         }
     end,
