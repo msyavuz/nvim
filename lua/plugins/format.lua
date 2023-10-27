@@ -1,5 +1,8 @@
 local formatters = {
     lua = { "stylua" },
+    python = { "isort", "black" },
+    javascript = { { "prettierd", "prettier" } },
+    typescript = { { "prettierd", "prettier" } },
 }
 
 return {
