@@ -4,7 +4,63 @@ local keymaps = {
         function()
             require("telescope.builtin").find_files()
         end,
-        desc = "[F]ind [F]iles",
+        desc = "[F]ind [f]iles",
+    },
+    {
+        "<leader>fr",
+        function()
+            require("telescope.builtin").oldfiles()
+        end,
+        desc = "[F]ind [r]ecent files",
+    },
+    {
+        "<leader>fb",
+        function()
+            require("telescope.builtin").buffers()
+        end,
+        desc = "[F]ind [b]uffers",
+    },
+    {
+        "<leader>f/",
+        function()
+            require("telescope.builtin").current_buffer_fuzzy_find()
+        end,
+        desc = "[/] Fuzzy find in current buffer",
+    },
+    {
+        "<leader>fg",
+        function()
+            require("telescope.builtin").git_files()
+        end,
+        desc = "[F]ind [g]it files",
+    },
+    {
+        "<leader>fh",
+        function()
+            require("telescope.builtin").help_tags()
+        end,
+        desc = "[F]ind [h]help",
+    },
+    {
+        "<leader>fw",
+        function()
+            require("telescope.builtin").grep_string()
+        end,
+        desc = "[F]ind current [w]ord",
+    },
+    {
+        "<leader>fs",
+        function()
+            require("telescope.builtin").live_grep()
+        end,
+        desc = "[Fs] Find by grep",
+    },
+    {
+        "<leader>fr",
+        function()
+            require("telescope.builtin").resume()
+        end,
+        desc = "[F]ind [r]esume",
     },
 }
 
@@ -35,11 +91,7 @@ return {
                         ["<C-d>"] = false,
                     },
                 },
-            },
-            pickers = {
-                find_files = {
-                    sorting_strategy = "ascending",
-                },
+                sorting_strategy = "ascending",
             },
         }
         pcall(require("telescope").load_extension, "fzf")
