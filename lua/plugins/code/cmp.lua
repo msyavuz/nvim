@@ -14,6 +14,7 @@ return {
 
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-buffer",
+        "roobert/tailwindcss-colorizer-cmp.nvim",
     },
     config = function()
         local cmp = require "cmp"
@@ -26,6 +27,9 @@ return {
                 expand = function(args)
                     luasnip.lsp_expand(args.body)
                 end,
+            },
+            formatting = {
+                format = require("tailwindcss-colorizer-cmp").formatter,
             },
             mapping = cmp.mapping.preset.insert {
                 ["<C-n>"] = cmp.mapping.select_next_item(),
