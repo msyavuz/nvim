@@ -44,6 +44,9 @@ return {
                     bg = "none",
                     fg = c.fg_dark,
                 }
+                hl.LuaLineBlend = {
+                    bg = "none",
+                }
             end,
         }
         vim.cmd [[colorscheme tokyonight]]

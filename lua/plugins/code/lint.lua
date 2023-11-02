@@ -1,5 +1,4 @@
 local linters = {
-    markdown = { "markdownlint" },
     javascript = { "eslint_d" },
     typescript = { "eslint_d" },
     javascriptreact = { "eslint_d" },
@@ -8,6 +7,7 @@ local linters = {
     python = { "flake8" },
     gdscript = { "gdlint" },
     gitcommit = { "commitlint" },
+    go = { "staticcheck" },
 }
 
 return {

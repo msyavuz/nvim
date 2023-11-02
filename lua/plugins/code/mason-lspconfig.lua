@@ -1,5 +1,6 @@
 local servers = {
     "lua_ls",
+    "gopls",
 }
 local on_attach = function(_, bufnr)
     -- NOTE: Remember that lua is a real programming language, and as such it is possible
