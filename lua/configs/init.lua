@@ -1,4 +1,11 @@
 local opt = vim.opt
+local api = vim.api
+
+--cursor
+
+api.nvim_set_hl(0, "InsertCursor", { bg = "#96CBFE" })
+
+opt.guicursor = "i:block-InsertCursor"
 
 --hlsearch
 opt.hlsearch = false
