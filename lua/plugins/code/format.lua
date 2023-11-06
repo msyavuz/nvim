@@ -1,12 +1,12 @@
 local formatters = {
     lua = { "stylua" },
     python = { "isort", "black" },
-    javascript = { { "prettierd", "prettier" } },
-    typescript = { { "prettierd", "prettier" } },
-    javascriptreact = { { "prettierd", "prettier" } },
-    typescriptreact = { { "prettierd", "prettier" } },
-    css = { { "prettierd", "prettier" } },
-    html = { { "prettierd", "prettier" } },
+    javascript = { { "prettier", "prettier" } },
+    typescript = { { "prettier", "prettier" } },
+    javascriptreact = { { "prettier", "prettier" } },
+    typescriptreact = { { "prettier", "prettier" } },
+    css = { { "prettier", "prettier" } },
+    html = { { "prettier", "prettier" } },
 }
 
 return {
