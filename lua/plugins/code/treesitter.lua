@@ -6,6 +6,9 @@ return {
     dependencies = {
         "nvim-treesitter/nvim-treesitter-textobjects",
         "windwp/nvim-ts-autotag",
+
+        --templ
+        "vrischmann/tree-sitter-templ",
     },
     build = ":TSUpdate",
     config = function()
@@ -74,5 +77,17 @@ return {
                 },
             }
         end, 0)
+
+        --templ
+        local treesitter_parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+        treesitter_parser_config.templ = {
+            install_info = {
+                url = "https://github.com/vrischmann/tree-sitter-templ.git",
+                files = { "src/parser.c", "src/scanner.c" },
+                branch = "master",
+            },
+        }
+
+        vim.treesitter.language.register("templ", "templ")
     end,
 }
