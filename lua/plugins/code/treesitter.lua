@@ -7,6 +7,9 @@ return {
         "nvim-treesitter/nvim-treesitter-textobjects",
         "windwp/nvim-ts-autotag",
 
+        --context
+        "nvim-treesitter/nvim-treesitter-context",
+
         --templ
         "vrischmann/tree-sitter-templ",
     },
@@ -86,6 +89,9 @@ return {
                 files = { "src/parser.c", "src/scanner.c" },
                 branch = "master",
             },
+        }
+        require("treesitter-context").setup {
+            max_lines = 1,
         }
 
         vim.treesitter.language.register("templ", "templ")
