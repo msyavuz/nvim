@@ -20,6 +20,7 @@ return {
         },
         formatters = {
             prettierd = {
+                arg = { "--config", "/home/msyavuz/.config/defaults/.prettierrc.json" },
                 env = {
                     PRETTIERD_DEFAULT_CONFIG = "/home/msyavuz/.config/defaults/.prettierrc.json",
                 },

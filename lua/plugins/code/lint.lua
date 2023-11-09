@@ -1,10 +1,6 @@
 local linters = {
-    javascript = { "eslint" },
-    typescript = { "eslint" },
-    javascriptreact = { "eslint" },
-    typescriptreact = { "eslint" },
     lua = { "luacheck" },
-    python = { "flake8" },
+    python = { "ruff" },
     gdscript = { "gdlint" },
     gitcommit = { "commitlint" },
     go = { "staticcheck" },
