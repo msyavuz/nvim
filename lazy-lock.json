@@ -12,6 +12,7 @@
   "garbage-day.nvim": { "branch": "main", "commit": "cb1cac3309525bcbcc9942eaa06bc5f258271432" },
   "gen.nvim": { "branch": "main", "commit": "cfe4edfe550f0f12518221856469223e7d02c37e" },
   "gitsigns.nvim": { "branch": "main", "commit": "af0f583cd35286dd6f0e3ed52622728703237e50" },
+  "hardtime.nvim": { "branch": "main", "commit": "8cc4dec29a177cb7c33a900ccf45b451684c30a0" },
   "lazy.nvim": { "branch": "main", "commit": "96584866b9c5e998cbae300594d0ccfd0c464627" },
   "lazygit.nvim": { "branch": "main", "commit": "de35012036d43bca03628d40d083f7c02a4cda3f" },
   "leap.nvim": { "branch": "main", "commit": "b6ae80f8fc9993638608fc1a51c6ab0eeb12618c" },
