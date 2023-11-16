@@ -7,6 +7,8 @@ local formatters = {
     typescriptreact = { { "prettier", "prettier" } },
     css = { { "prettier", "prettier" } },
     html = { { "prettier", "prettier" } },
+    sql = { "sqlfmt" },
+    cpp = { "clang_format" },
 }
 
 return {
@@ -24,6 +26,9 @@ return {
                 env = {
                     PRETTIERD_DEFAULT_CONFIG = "/home/msyavuz/.config/defaults/.prettierrc.json",
                 },
+            },
+            clang_format = {
+                prepend_args = { "--style=file:/home/msyavuz/.config/defaults/.clang-format" },
             },
         },
     },
