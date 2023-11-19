@@ -75,7 +75,12 @@ return {
             },
             sources = {
                 { name = "nvim_lsp" },
-                { name = "luasnip" },
+                {
+                    name = "luasnip",
+                    entry_filter = function()
+                        return not vim.bo.filetype == "oil"
+                    end,
+                },
                 { name = "path" },
                 { name = "buffer" },
             },
@@ -108,6 +113,7 @@ return {
             },
             experimental = {
                 native_menu = false,
+                ghost_text = false,
             },
         }
     end,
