@@ -9,6 +9,7 @@ local formatters = {
     html = { { "prettier", "prettier" } },
     sql = { "sqlfmt" },
     cpp = { "clang_format" },
+    gdscript = { "gdformat" },
 }
 
 return {
