@@ -9,3 +9,6 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 --Center
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half page up" })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page down" })
+
+--Oil
+vim.keymap.set("n", "<leader>fv", require("oil").open, { desc = "Open directory" })
