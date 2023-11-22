@@ -1,12 +1,13 @@
 local formatters = {
     lua = { "stylua" },
     python = { "isort", "black" },
-    javascript = { { "prettier", "prettier" } },
-    typescript = { { "prettier", "prettier" } },
-    javascriptreact = { { "prettier", "prettier" } },
-    typescriptreact = { { "prettier", "prettier" } },
-    css = { { "prettier", "prettier" } },
-    html = { { "prettier", "prettier" } },
+    javascript = { "prettier" },
+    typescript = { "prettier" },
+    javascriptreact = { "prettier" },
+    typescriptreact = { "prettier" },
+    json = { "prettier" },
+    css = { "prettier" },
+    html = { "prettier" },
     sql = { "sqlfmt" },
     cpp = { "clang_format" },
     gdscript = { "gdformat" },
@@ -23,10 +24,7 @@ return {
         },
         formatters = {
             prettier = {
-                arg = { "--config", "/home/msyavuz/.config/defaults/.prettierrc.json" },
-                env = {
-                    PRETTIERD_DEFAULT_CONFIG = "/home/msyavuz/.config/defaults/.prettierrc.json",
-                },
+                prepend_args = { "--tab-width", 4 },
             },
             clang_format = {
                 prepend_args = { "--style=file:/home/msyavuz/.config/defaults/.clang-format" },

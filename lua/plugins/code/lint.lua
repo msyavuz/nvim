@@ -5,6 +5,7 @@ local linters = {
     gitcommit = { "commitlint" },
     go = { "staticcheck" },
     sql = { "sqlfluff" },
+    json = { "jsonlint" },
 }
 
 return {

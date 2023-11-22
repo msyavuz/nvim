@@ -58,6 +58,20 @@ return {
         }
         masonlsp.setup_handlers {
             function(server_name)
+                if server_name == "tailwindcss" then
+                    require("lspconfig").tailwindcss.setup {
+                        settings = {
+                            tailwindCSS = {
+                                experimental = {
+                                    classRegex = {
+                                        { "cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
+                                        { "cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)" },
+                                    },
+                                },
+                            },
+                        },
+                    }
+                end
                 require("lspconfig")[server_name].setup {
                     capabilities = capabilities,
                     on_attach = on_attach,
