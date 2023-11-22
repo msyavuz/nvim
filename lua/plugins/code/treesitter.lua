@@ -22,6 +22,8 @@ return {
                 },
                 ensure_installed = langs,
                 auto_install = false,
+                sync_install = true,
+                ignore_install = {},
 
                 highlight = { enable = true },
                 indent = { enable = true },
