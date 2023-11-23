@@ -80,5 +80,11 @@ return {
                 }
             end,
         }
+        require("lspconfig").gdscript.setup {
+            filetypes = { "gd", "gdscript", "gdscript3" },
+            on_attach = on_attach,
+            capabilities = capabilities,
+            settings = {},
+        }
     end,
 }
