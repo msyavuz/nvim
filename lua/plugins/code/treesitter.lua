@@ -25,8 +25,8 @@ return {
                 sync_install = true,
                 ignore_install = {},
 
-                highlight = { enable = true },
                 indent = { enable = true },
+                highlight = { enable = true },
                 incremental_selection = {
                     enable = true,
                     keymaps = {
