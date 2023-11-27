@@ -5,5 +5,6 @@ return {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         "folke/neodev.nvim",
+        "b0o/schemastore.nvim",
     },
 }

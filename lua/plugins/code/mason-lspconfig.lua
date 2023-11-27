@@ -86,5 +86,16 @@ return {
             capabilities = capabilities,
             settings = {},
         }
+        require("lspconfig").jsonls.setup {
+            filetypes = { "json" },
+            on_attach = on_attach,
+            capabilities = capabilities,
+            settings = {
+                json = {
+                    schemas = require("schemastore").json.schemas(),
+                    validate = { enable = true },
+                },
+            },
+        }
     end,
 }
