@@ -20,7 +20,7 @@ return {
 
         local augroup = vim.api.nvim_create_augroup("Linter", { clear = true })
 
-        vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+        vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter" }, {
             callback = function()
                 require("lint").try_lint()
             end,
