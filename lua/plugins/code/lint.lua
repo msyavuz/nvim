@@ -18,10 +18,13 @@ return {
             "--dialect=sqlite",
         }
 
+        local augroup = vim.api.nvim_create_augroup("Linter", { clear = true })
+
         vim.api.nvim_create_autocmd({ "BufWritePost" }, {
             callback = function()
                 require("lint").try_lint()
             end,
+            group = augroup,
         })
     end,
 }
