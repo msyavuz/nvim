@@ -5,6 +5,7 @@ local formatters = {
     typescript = { "prettier" },
     javascriptreact = { "prettier" },
     typescriptreact = { "prettier" },
+    svelte = { "prettier" },
     astro = { "prettier" },
     json = { "prettier" },
     css = { "prettier" },
@@ -12,6 +13,7 @@ local formatters = {
     sql = { "sqlfmt" },
     cpp = { "clang_format" },
     gdscript = { "gdformat" },
+    go = { "gofmt" },
 }
 
 return {

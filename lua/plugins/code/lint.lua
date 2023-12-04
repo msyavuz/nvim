@@ -3,7 +3,7 @@ local linters = {
     python = { "mypy" },
     gdscript = { "gdlint" },
     gitcommit = { "commitlint" },
-    go = { "staticcheck" },
+    go = { "golangcilint" },
     sql = { "sqlfluff" },
     json = { "jsonlint" },
 }

@@ -12,3 +12,7 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page down" })
 
 --Oil
 vim.keymap.set("n", "<leader>fv", require("oil").open, { desc = "Open directory" })
+
+--Quick buffer switch
+
+vim.keymap.set("n", "<tab>", "<cmd>b#<cr>", { desc = "Switch to last buffer" })
