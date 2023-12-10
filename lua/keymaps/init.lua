@@ -1,18 +1,33 @@
-vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
+local keymap = vim.keymap
 
---Diagnostics
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
-vim.keymap.set("n", "<leader>fd", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
+keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
---Center
-vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half page up" })
-vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page down" })
+-- Diagnostics
+keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
+keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
+keymap.set("n", "<leader>fd", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
+keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
---Oil
-vim.keymap.set("n", "<leader>fv", require("oil").open, { desc = "Open directory" })
+-- Center
+keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half page up" })
+keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page down" })
 
---Quick buffer switch
+-- Oil
+keymap.set("n", "<leader>fv", require("oil").open, { desc = "Open directory" })
 
-vim.keymap.set("n", "<tab>", "<cmd>b#<cr>", { desc = "Switch to last buffer" })
+-- Quick buffer switch
+
+keymap.set("n", "<tab>", "<cmd>b#<cr>", { desc = "Switch to last buffer" })
+
+-- Switch relative line numbers
+keymap.set("n", "<leader>rln", function()
+    vim.wo.relativenumber = not vim.wo.relativenumber
+    vim.opt.number = true
+end, { desc = "Relative line numbers" })
+
+-- Increment/Decrement
+keymap.set("n", "+", "<C-a>")
+keymap.set("n", "-", "<C-x>")
+
+-- Copy file
+keymap.set("n", "<C-c>", "<cmd>%y+<CR>")
