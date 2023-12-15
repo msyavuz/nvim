@@ -8,6 +8,7 @@ local formatters = {
     svelte = { "prettier" },
     astro = { "prettier" },
     json = { "prettier" },
+    jsonc = { "prettier" },
     css = { "prettier" },
     html = { "prettier" },
     sql = { "sqlfmt" },

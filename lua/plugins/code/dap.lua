@@ -23,7 +23,38 @@ return {
                     mode = { "n", "v" },
                 },
             },
-            opts = {},
+            opts = {
+                layouts = {
+                    {
+                        elements = {
+                            {
+                                id = "stacks",
+                                size = 0.33,
+                            },
+                            {
+                                id = "watches",
+                                size = 0.33,
+                            },
+                        },
+                        position = "left",
+                        size = 40,
+                    },
+                    {
+                        elements = {
+                            {
+                                id = "repl",
+                                size = 0.5,
+                            },
+                            {
+                                id = "console",
+                                size = 0.5,
+                            },
+                        },
+                        position = "bottom",
+                        size = 10,
+                    },
+                },
+            },
             config = function(_, opts)
                 -- setup dap config by VsCode launch.json file
                 -- require("dap.ext.vscode").load_launchjs()
@@ -80,20 +111,36 @@ return {
                 },
             },
         },
+        {
+            "Weissle/persistent-breakpoints.nvim",
+            config = function()
+                require("persistent-breakpoints").setup {
+                    load_breakpoints_event = { "BufReadPost" },
+                }
+            end,
+            event = "BufReadPost",
+        },
     },
 
     keys = {
         {
+            "<leader>dx",
+            function()
+                require("persistent-breakpoints.api").clear_all_breakpoints()
+            end,
+            desc = "Clear All Breakpoints",
+        },
+        {
             "<leader>dB",
             function()
-                require("dap").set_breakpoint(vim.fn.input "Breakpoint condition: ")
+                require("persistent-breakpoints.api").set_conditional_breakpoint(vim.fn.input "Breakpoint condition: ")
             end,
             desc = "Breakpoint Condition",
         },
         {
             "<leader>db",
             function()
-                require("dap").toggle_breakpoint()
+                require("persistent-breakpoints.api").toggle_breakpoint()
             end,
             desc = "Toggle Breakpoint",
         },
@@ -214,6 +261,14 @@ return {
             host = "127.0.0.1",
             port = 6006,
         }
+        dap.adapters.delve = {
+            type = "server",
+            port = "${port}",
+            executable = {
+                command = "dlv",
+                args = { "dap", "-l", "127.0.0.1:${port}" },
+            },
+        }
         dap.configurations.gdscript = {
             {
                 type = "godot",
@@ -223,7 +278,41 @@ return {
                 launch_scene = true,
             },
         }
-
+        dap.configurations.go = {
+            {
+                type = "delve",
+                name = "Debug",
+                request = "launch",
+                program = "${file}",
+            },
+            {
+                type = "delve",
+                name = "Debug Package",
+                request = "launch",
+                program = "${fileDirname}",
+            },
+            {
+                type = "delve",
+                name = "Debug (go.mod)",
+                request = "launch",
+                program = "${workspaceFolder}/main.go",
+            },
+            {
+                type = "delve",
+                name = "Debug test", -- configuration for debugging test files
+                request = "launch",
+                mode = "test",
+                program = "${file}",
+            },
+            -- works with go.mod packages and sub packages
+            {
+                type = "delve",
+                name = "Debug test (go.mod)",
+                request = "launch",
+                mode = "test",
+                program = "./${relativeFileDirname}",
+            },
+        }
         for name, sign in pairs(icons.dap) do
             sign = type(sign) == "table" and sign or { sign }
             vim.fn.sign_define(

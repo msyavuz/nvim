@@ -7,6 +7,13 @@ local keymaps = {
         desc = "[F]ind [f]iles",
     },
     {
+        "<leader>fq",
+        function()
+            require("telescope.builtin").diagnostics()
+        end,
+        desc = "[F]ind [q]uickfix list",
+    },
+    {
         "<leader>fr",
         function()
             require("telescope.builtin").oldfiles()
@@ -62,6 +69,20 @@ local keymaps = {
         end,
         desc = "[F]ind [r]esume",
     },
+    {
+        "<leader>fdb",
+        function()
+            require("telescope").extensions.dap.list_breakpoints {}
+        end,
+        desc = "[F]ind [d]ebug [b]reakpoints",
+    },
+    {
+        "<leader>fdv",
+        function()
+            require("telescope").extensions.dap.variables {}
+        end,
+        desc = "[F]ind [d]ebug [v]ariables",
+    },
 }
 
 return {
@@ -81,6 +102,9 @@ return {
                 return vim.fn.executable "make" == 1
             end,
         },
+        {
+            "nvim-telescope/telescope-dap.nvim",
+        },
     },
     config = function()
         require("telescope").setup {
@@ -95,6 +119,7 @@ return {
             },
         }
         pcall(require("telescope").load_extension, "fzf")
+        pcall(require("telescope").load_extension, "dap")
     end,
     keys = keymaps,
 }
