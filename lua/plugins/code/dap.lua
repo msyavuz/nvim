@@ -28,25 +28,7 @@ return {
                     {
                         elements = {
                             {
-                                id = "stacks",
-                                size = 0.33,
-                            },
-                            {
-                                id = "watches",
-                                size = 0.33,
-                            },
-                        },
-                        position = "left",
-                        size = 40,
-                    },
-                    {
-                        elements = {
-                            {
                                 id = "repl",
-                                size = 0.5,
-                            },
-                            {
-                                id = "console",
                                 size = 0.5,
                             },
                         },
