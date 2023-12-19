@@ -1,6 +1,22 @@
 local servers = {
-    "lua_ls",
+    "astro",
+    "clangd",
+    "cssls",
+    "emmet_language_server",
     "gopls",
+    "gdscript",
+    "html",
+    "htmx",
+    "jdtls",
+    "jsonls",
+    "lua_ls",
+    "pyright",
+    "sqlls",
+    "svelte",
+    "tailwindcss",
+    "taplo",
+    "templ",
+    "tsserver",
 }
 local on_attach = function(_, bufnr)
     -- NOTE: Remember that lua is a real programming language, and as such it is possible
