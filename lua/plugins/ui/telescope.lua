@@ -70,18 +70,18 @@ local keymaps = {
         desc = "[F]ind [r]esume",
     },
     {
-        "<leader>fdb",
+        "<leader>flb",
         function()
             require("telescope").extensions.dap.list_breakpoints {}
         end,
-        desc = "[F]ind [d]ebug [b]reakpoints",
+        desc = "[F]ind [l]ist of [b]reakpoints",
     },
     {
-        "<leader>fdv",
+        "<leader>flv",
         function()
             require("telescope").extensions.dap.variables {}
         end,
-        desc = "[F]ind [d]ebug [v]ariables",
+        desc = "[F]ind [l]ist of [v]ariables",
     },
 }
 

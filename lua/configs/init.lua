@@ -11,6 +11,7 @@ opt.guicursor = "i:block-InsertCursor"
 opt.hlsearch = false
 
 --line numbers
+opt.number = true
 opt.relativenumber = true
 
 -- Enable break indent
