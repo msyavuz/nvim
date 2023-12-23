@@ -21,9 +21,9 @@ return {
                     enable = true,
                     enable_close_on_slash = false,
                 },
-                ensure_installed = langs,
+                ensure_installed = false,
                 auto_install = false,
-                sync_install = true,
+                sync_install = false,
                 ignore_install = {},
 
                 indent = { enable = true },
