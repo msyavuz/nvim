@@ -18,11 +18,6 @@ return {
 			"--dialect=sqlite",
 		}
 
-		require("lint").linters.commitlint.args = {
-			"--config",
-			"~/.config/defaults/commitlint.config.js",
-		}
-
 		local augroup = vim.api.nvim_create_augroup("Linter", { clear = true })
 
 		vim.api.nvim_create_autocmd({ "BufWritePost" }, {
