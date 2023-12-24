@@ -6,11 +6,9 @@ local servers = {
     "gopls",
     "gdscript",
     "html",
-    "htmx",
     "jdtls",
     "jsonls",
     "lua_ls",
-    "nil_ls",
     "pyright",
     "sqlls",
     "svelte",
@@ -19,6 +17,7 @@ local servers = {
     "templ",
     "tsserver",
 }
+
 local on_attach = function(_, bufnr)
     -- NOTE: Remember that lua is a real programming language, and as such it is possible
     -- to define small helper and utility functions so you don't have to repeat yourself
@@ -69,6 +68,17 @@ return {
     dependencies = {
         "folke/neodev.nvim",
         "b0o/schemastore.nvim",
+        -- Auto install servers
+        {
+            "williamboman/mason.nvim",
+            opts = {}
+        },
+        {
+            "williamboman/mason-lspconfig.nvim",
+            opts = {
+                automatic_installation = true
+            }
+        }
     },
 
     config = function()
@@ -84,46 +94,3 @@ return {
         end
     end
 }
-
-
--- masonlsp.setup_handlers {
---     function(server_name)
---         if server_name == "tailwindcss" then
---             require("lspconfig").tailwindcss.setup {
---                 settings = {
---                     tailwindCSS = {
---                         experimental = {
---                             classRegex = {
---                                 { "cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
---                                 { "cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)" },
---                             },
---                         },
---                     },
---                 },
---             }
---         end
---         require("lspconfig")[server_name].setup {
---             capabilities = capabilities,
---             on_attach = on_attach,
---             settings = servers[server_name],
---             filetypes = (servers[server_name] or {}).filetypes,
---         }
---     end,
--- }
--- require("lspconfig").gdscript.setup {
---     filetypes = { "gd", "gdscript", "gdscript3" },
---     on_attach = on_attach,
---     capabilities = capabilities,
---     settings = {},
--- }
--- require("lspconfig").jsonls.setup {
---     filetypes = { "json" },
---     on_attach = on_attach,
---     capabilities = capabilities,
---     settings = {
---         json = {
---             schemas = require("schemastore").json.schemas(),
---             validate = { enable = true },
---         },
---     },
--- }
