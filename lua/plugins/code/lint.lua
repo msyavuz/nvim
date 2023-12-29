@@ -9,9 +9,6 @@ local linters = {
 	markdown = { "misspell" },
 }
 
-local pattern = "(.+):(%d+):(%d+): (.+)"
-local groups = { "file", "lnum", "col", "message" }
-
 return {
 	"mfussenegger/nvim-lint",
 

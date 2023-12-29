@@ -15,6 +15,7 @@ local formatters = {
 	cpp = { "clang_format" },
 	gdscript = { "gdformat" },
 	go = { "gofmt" },
+	sh = { "beautysh" },
 }
 
 return {

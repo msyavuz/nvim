@@ -1,5 +1,6 @@
 local servers = {
 	"astro",
+	"bashls",
 	"clangd",
 	"cssls",
 	"dockerls",
