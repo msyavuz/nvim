@@ -10,9 +10,10 @@ return {
 	end,
 	keys = {
 		{
+			mode = { "n", "x" },
 			"<leader>rr",
 			function()
-				require("telescope").extensions.refactoring.refactors()
+				require("refactoring").select_refactor()
 			end,
 			desc = "[R]efactor",
 		},
