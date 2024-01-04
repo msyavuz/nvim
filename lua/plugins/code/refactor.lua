@@ -5,17 +5,17 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 	},
 	config = function()
-		require("refactoring").setup()
-		require("telescope").load_extension("refactoring")
+		require("refactoring").setup({})
 	end,
+
 	keys = {
 		{
-			mode = { "n", "x" },
 			"<leader>rr",
 			function()
-				require("refactoring").select_refactor()
+				require("refactoring").select_refactor({})
 			end,
-			desc = "[R]efactor",
+			mode = { "n", "x" },
+			desc = "[R]efacto[r]",
 		},
 	},
 }
