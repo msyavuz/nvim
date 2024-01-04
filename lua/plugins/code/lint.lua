@@ -25,8 +25,8 @@ return {
 		}
 
 		require("lint").linters.commitlint.args = {
-			"--config",
-			"~/.config/defaults/.commitlintrc.json",
+			"-g",
+			"/home/msyavuz/.config/defaults/.commitlintrc.json",
 		}
 
 		require("lint").linters_by_ft = linters
