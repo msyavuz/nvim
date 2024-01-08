@@ -21,6 +21,12 @@ return {
 	config = function()
 		require("noice").setup({
 			lsp = {
+				signature = {
+					enabled = true,
+					auto_open = {
+						enabled = false,
+					},
+				},
 				hover = {
 					silent = true,
 				},
