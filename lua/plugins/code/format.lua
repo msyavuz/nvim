@@ -14,7 +14,7 @@ local formatters = {
 	sql = { "sqlfmt" },
 	cpp = { "clang_format" },
 	gdscript = { "gdformat" },
-	go = { "gofmt" },
+	go = { "goimports", "gofumpt" },
 	sh = { "beautysh" },
 }
 
