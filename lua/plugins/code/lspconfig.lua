@@ -8,6 +8,7 @@ local servers = {
 	"gopls",
 	"gdscript",
 	"html",
+	"htmx",
 	"jdtls",
 	"jsonls",
 	"lua_ls",
@@ -93,5 +94,23 @@ return {
 				capabilities = capabilities,
 			})
 		end
+
+		lspconfig.tailwindcss.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			filetypes = { "templ", "astro", "javascript", "typescript", "react" },
+			init_options = { userLanguages = { templ = "html" } },
+		})
+		lspconfig.html.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			filetypes = { "html", "templ" },
+		})
+
+		lspconfig.htmx.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			filetypes = { "html", "templ" },
+		})
 	end,
 }

@@ -11,11 +11,12 @@ local formatters = {
 	jsonc = { "prettier" },
 	css = { "prettier" },
 	html = { "prettier" },
-	sql = { "sqlfmt" },
+	sql = { "sql_formatter" },
 	cpp = { "clang_format" },
 	gdscript = { "gdformat" },
 	go = { "goimports", "gofumpt" },
 	sh = { "beautysh" },
+	templ = { "templ" },
 }
 
 return {
@@ -28,6 +29,9 @@ return {
 			lsp_fallback = true,
 		},
 		formatters = {
+			sql_formatter = {
+				prepend_args = { "--config", "/home/msyavuz/.config/defaults/.sql.json" },
+			},
 			prettier = {
 				prepend_args = { "--tab-width", 4 },
 			},
