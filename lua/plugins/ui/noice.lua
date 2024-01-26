@@ -14,6 +14,9 @@ return {
 					on_open = function(win)
 						vim.api.nvim_win_set_config(win, { focusable = false })
 					end,
+					render = "wrapped-compact",
+					timeout = 2000,
+					top_down = false,
 				})
 			end,
 		},
