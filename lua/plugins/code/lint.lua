@@ -1,12 +1,13 @@
 local linters = {
 	lua = { "luacheck" },
-	python = { "mypy" },
+	python = { "flake8" },
 	gdscript = { "gdlint" },
 	gitcommit = { "commitlint" },
 	go = { "golangcilint" },
 	sql = { "sqlfluff" },
 	json = { "jsonlint" },
 	markdown = { "misspell" },
+	html = { "djlint" },
 }
 
 return {

@@ -1,6 +1,5 @@
 local opt = vim.opt
 local api = vim.api
-
 --cursor
 
 api.nvim_set_hl(0, "InsertCursor", { bg = "#96CBFE" })
@@ -63,6 +62,23 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank()
 	end,
 	group = highlight_group,
+	pattern = "*",
+})
+
+local filetype_group = vim.api.nvim_create_augroup("FiletypeChange", { clear = true })
+vim.api.nvim_create_autocmd("BufEnter", {
+	callback = function()
+		--templates
+		vim.filetype.add({
+			extension = {
+				templ = "templ",
+			},
+			pattern = {
+				["*/templates/**/*.html"] = "htmldjango",
+			},
+		})
+	end,
+	group = filetype_group,
 	pattern = "*",
 })
 

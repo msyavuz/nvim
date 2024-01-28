@@ -91,6 +91,7 @@ return {
 			sorting = {
 				-- NOTE: Would be cool to add stuff like "See variable names before method names" in rust, or something like that.
 				comparators = {
+					cmp.config.compare.locality,
 					cmp.config.compare.offset,
 					cmp.config.compare.exact,
 					cmp.config.compare.score,

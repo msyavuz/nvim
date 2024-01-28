@@ -27,7 +27,7 @@ return {
 				signature = {
 					enabled = true,
 					auto_open = {
-						enabled = false,
+						enabled = true,
 					},
 				},
 				hover = {

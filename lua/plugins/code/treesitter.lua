@@ -98,5 +98,15 @@ return {
 		})
 
 		vim.treesitter.language.register("templ", "templ")
+
+		--django
+		vim.filetype.add({
+			extension = {
+				templ = "templ",
+			},
+			pattern = {
+				["*/templates/**/*.html"] = "htmldjango",
+			},
+		})
 	end,
 }
