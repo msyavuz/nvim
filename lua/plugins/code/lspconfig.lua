@@ -111,8 +111,9 @@ return {
 		lspconfig.tailwindcss.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			filetypes = { "templ", "astro", "javascript", "typescript", "react" },
+			filetypes = { "templ", "astro", "javascript", "typescript", "react", "htmldjango" },
 			init_options = { userLanguages = { templ = "html" } },
+			root_dir = lspconfig.util.root_pattern("theme/static_src/tailwind.config.js"),
 		})
 		lspconfig.html.setup({
 			on_attach = on_attach,

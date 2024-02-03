@@ -7,7 +7,7 @@ local linters = {
 	sql = { "sqlfluff" },
 	json = { "jsonlint" },
 	markdown = { "misspell" },
-	html = { "djlint" },
+	htmldjango = { "djlint" },
 }
 
 return {
