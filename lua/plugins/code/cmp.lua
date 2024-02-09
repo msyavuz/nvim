@@ -77,7 +77,7 @@ return {
 					end
 				end, { "i", "s" }),
 			}),
-			sources = {
+			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
 				{
 					name = "luasnip",
@@ -85,9 +85,12 @@ return {
 						return not vim.bo.filetype == "oil"
 					end,
 				},
-				{ name = "path" },
-				{ name = "buffer" },
-			},
+				{
+
+					{ name = "path" },
+					{ name = "buffer" },
+				},
+			}),
 			sorting = {
 				-- NOTE: Would be cool to add stuff like "See variable names before method names" in rust, or something like that.
 				comparators = {

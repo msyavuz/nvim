@@ -17,6 +17,7 @@ local formatters = {
 	gdscript = { "gdformat" },
 	go = { "goimports", "gofumpt" },
 	sh = { "beautysh" },
+	zsh = { "beautysh" },
 	templ = { "templ" },
 }
 
