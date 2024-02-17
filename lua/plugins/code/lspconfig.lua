@@ -1,4 +1,5 @@
 local servers = {
+	"angularls",
 	"astro",
 	"bashls",
 	"clangd",
