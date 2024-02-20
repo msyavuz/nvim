@@ -41,7 +41,7 @@ return {
 						},
 					},
 					{ "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
-					{ "filename" },
+					{ "filename", path = 1 },
 				},
 				lualine_x = {
 
