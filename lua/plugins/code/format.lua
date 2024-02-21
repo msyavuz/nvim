@@ -7,6 +7,7 @@ local formatters = {
 	typescriptreact = { "prettier" },
 	svelte = { "prettier" },
 	astro = { "prettier" },
+	angular = { "prettier" },
 	json = { "prettier" },
 	jsonc = { "prettier" },
 	css = { "prettier" },

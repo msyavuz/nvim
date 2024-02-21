@@ -96,6 +96,16 @@ return {
 			})
 		end
 
+		lspconfig.angularls.setup({
+			cmd = { "ngserver", "--stdio", "--tsProbeLocations", "", "--ngProbeLocations", "" },
+			filetypes = { "typescript", "html", "typescriptreact", "typescript.tsx", "angular" },
+			root_dir = lspconfig.util.root_pattern("angular.json"),
+		})
+
+		lspconfig.emmet_language_server.setup({
+			filetypes = { "html", "css", "angular" },
+		})
+
 		lspconfig.pyright.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
@@ -118,13 +128,13 @@ return {
 		lspconfig.tailwindcss.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			filetypes = { "templ", "astro", "react", "htmldjango" },
+			filetypes = { "templ", "astro", "react", "htmldjango", "angular" },
 			init_options = { userLanguages = { templ = "html" } },
 		})
 		lspconfig.html.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			filetypes = { "html", "templ" },
+			filetypes = { "html", "templ", "angular" },
 		})
 
 		lspconfig.htmx.setup({

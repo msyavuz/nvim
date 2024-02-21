@@ -97,13 +97,13 @@ return {
 
 		vim.treesitter.language.register("templ", "templ")
 
-		--django
+		--angular
 		vim.filetype.add({
 			extension = {
-				templ = "templ",
+				html = "angular",
 			},
 			pattern = {
-				["*/templates/**/*.html"] = "htmldjango",
+				["*.component.html"] = "angular",
 			},
 		})
 	end,
