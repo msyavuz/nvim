@@ -106,5 +106,28 @@ return {
 				["*.component.html"] = "angular",
 			},
 		})
+
+		require("nvim-ts-autotag").setup({
+			filetypes = {
+				"angular",
+				"html",
+				"javascript",
+				"typescript",
+				"javascriptreact",
+				"typescriptreact",
+				"svelte",
+				"vue",
+				"tsx",
+				"jsx",
+				"rescript",
+				"xml",
+				"php",
+				"markdown",
+				"astro",
+				"glimmer",
+				"handlebars",
+				"hbs",
+			},
+		})
 	end,
 }

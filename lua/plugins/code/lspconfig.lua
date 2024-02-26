@@ -4,6 +4,7 @@ local servers = {
 	"bashls",
 	"clangd",
 	"cssls",
+	"csharp_ls",
 	"dockerls",
 	"emmet_language_server",
 	"gopls",
@@ -97,12 +98,16 @@ return {
 		end
 
 		lspconfig.angularls.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
 			cmd = { "ngserver", "--stdio", "--tsProbeLocations", "", "--ngProbeLocations", "" },
 			filetypes = { "typescript", "html", "typescriptreact", "typescript.tsx", "angular" },
 			root_dir = lspconfig.util.root_pattern("angular.json"),
 		})
 
 		lspconfig.emmet_language_server.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
 			filetypes = { "html", "css", "angular" },
 		})
 
@@ -129,7 +134,7 @@ return {
 			on_attach = on_attach,
 			capabilities = capabilities,
 			filetypes = { "templ", "astro", "react", "htmldjango", "angular" },
-			init_options = { userLanguages = { templ = "html" } },
+			init_options = { userLanguages = { templ = "html", angular = "html" } },
 		})
 		lspconfig.html.setup({
 			on_attach = on_attach,

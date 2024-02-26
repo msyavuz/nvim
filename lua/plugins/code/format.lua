@@ -26,6 +26,7 @@ return {
 
 	"stevearc/conform.nvim",
 	opts = {
+		log_level = vim.log.levels.TRACE,
 		formatters_by_ft = formatters,
 		format_on_save = {
 			timeout_ms = 500,
