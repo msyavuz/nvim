@@ -7,6 +7,7 @@ local servers = {
 	"csharp_ls",
 	"dockerls",
 	"emmet_language_server",
+	"eslint",
 	"gopls",
 	"gdscript",
 	"html",
@@ -21,6 +22,7 @@ local servers = {
 	"taplo",
 	"templ",
 	"tsserver",
+	"ruff_lsp",
 }
 
 local on_attach = function(_, bufnr)

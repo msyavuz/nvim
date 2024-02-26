@@ -35,3 +35,7 @@ keymap.set("n", "<C-c>", "<cmd>%y+<CR>")
 -- Exit insert mode
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode" })
 keymap.set("i", "kj", "<ESC>", { desc = "Exit insert mode" })
+
+-- Paste last yanked register
+keymap.set("n", ",p", '"0p', { desc = "Paste last yanked register" })
+keymap.set("n", ",P", '"0P', { desc = "Paste last yanked register" })
