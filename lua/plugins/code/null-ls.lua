@@ -23,7 +23,6 @@ return {
 				null_ls.builtins.diagnostics.sqlfluff.with({
 					extra_args = { "--dialect", "sqlite" },
 				}),
-				null_ls.builtins.diagnostics.selene,
 
 				-- Formatting
 				null_ls.builtins.formatting.stylua,
