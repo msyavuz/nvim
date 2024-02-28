@@ -23,6 +23,7 @@ local servers = {
 	"templ",
 	"tsserver",
 	"ruff_lsp",
+	"rust_analyzer",
 }
 
 local on_attach = function(_, bufnr)
