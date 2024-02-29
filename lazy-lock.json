@@ -47,6 +47,7 @@
   "persistent-breakpoints.nvim": { "branch": "main", "commit": "01e43512ef8d137f2b9e5c1c74fd35c37e787b59" },
   "plenary.nvim": { "branch": "master", "commit": "4f71c0c4a196ceb656c824a70792f3df3ce6bb6d" },
   "refactoring.nvim": { "branch": "master", "commit": "1b593e7203b31c7bde3fa638e6869144698df3b6" },
+  "rustaceanvim": { "branch": "master", "commit": "b5342fcd1f8dc694d375983c60df928b58a02eb4" },
   "schemastore.nvim": { "branch": "main", "commit": "a93078f016d3216f4ab4e4c65306b65212314d8d" },
   "scrollEOF.nvim": { "branch": "master", "commit": "75a471d8dab322947a28a7a810ab6ffc0dd051cf" },
   "telescope-dap.nvim": { "branch": "master", "commit": "8c88d9716c91eaef1cdea13cb9390d8ef447dbfe" },

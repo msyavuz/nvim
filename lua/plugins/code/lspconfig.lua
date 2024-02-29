@@ -7,6 +7,7 @@ local servers = {
 	"csharp_ls",
 	"dockerls",
 	"emmet_language_server",
+	"elixirls",
 	"eslint",
 	"gopls",
 	"gdscript",
@@ -83,7 +84,7 @@ return {
 		{
 			"williamboman/mason-lspconfig.nvim",
 			opts = {
-				automatic_installation = true,
+				automatic_installation = false,
 			},
 		},
 	},
