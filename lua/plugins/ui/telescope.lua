@@ -2,7 +2,25 @@ local keymaps = {
 	{
 		"<leader>ff",
 		function()
-			require("telescope.builtin").find_files({ hidden = true })
+			require("telescope.builtin").find_files({
+				hidden = true,
+				find_command = {
+					"rg",
+					"-uu",
+					"--files",
+					"--hidden",
+					"-g",
+					"!.git/",
+					"-g",
+					"!node_modules",
+					"-g",
+					"!tmp/",
+					"-g",
+					"!build/",
+					"-g",
+					"!dist/",
+				},
+			})
 		end,
 		desc = "[F]ind [f]iles",
 	},
