@@ -101,6 +101,29 @@ return {
 			})
 		end
 
+		lspconfig.tsserver.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			init_options = {
+				preferences = {
+					quotePreference = "double",
+					includeCompletionsForModuleExports = true,
+					includeCompletionsForImportStatements = true,
+					includeCompletionsWithSnippetText = true,
+					includeAutomaticOptionalChainCompletions = true,
+					includeCompletionsWithClassMemberSnippets = true,
+					includeCompletionsWithInsertText = true,
+					importModuleSpecifierPreference = "relative",
+					importModuleSpecifierEnding = "minimal",
+					provideRefactorNotApplicableReason = true,
+					allowRenameOfImportPath = true,
+					allowTextChangesInNewFiles = true,
+					displayPartsForJSDoc = true,
+					generateReturnInDocTemplate = true,
+				},
+			},
+		})
+
 		lspconfig.angularls.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
@@ -150,6 +173,17 @@ return {
 			on_attach = on_attach,
 			capabilities = capabilities,
 			filetypes = { "html", "templ" },
+		})
+
+		lspconfig.jsonls.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			settings = {
+				json = {
+					schemas = require("schemastore").json.schemas(),
+					validate = { enable = true },
+				},
+			},
 		})
 	end,
 }

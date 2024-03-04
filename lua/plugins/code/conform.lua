@@ -12,6 +12,7 @@ local prettier_langs = {
 }
 
 local options = {
+	log_level = vim.log.levels.INFO,
 	format_on_save = {
 		timeout_ms = 500,
 		lsp_fallback = true,
