@@ -1,31 +1,37 @@
 return {
-	"ThePrimeagen/harpoon",
-	branch = "harpoon2",
-	config = function()
-		local harpoon = require("harpoon")
+	"cbochs/grapple.nvim",
+	dependencies = {
+		{ "nvim-tree/nvim-web-devicons", lazy = true },
+	},
+	opts = {
+		scope = "git_branch",
+	},
+	keys = {
+		{ "<leader>ha", "<cmd>Grapple toggle<cr>", desc = "Tag a file" },
+		{ "<C-e>", "<cmd>Grapple toggle_tags<cr>", desc = "Toggle tags menu" },
 
-		harpoon:setup({})
+		{ "<leader>hf", "<cmd>Telescope grapple tags<cr>", desc = "Find in tags" },
 
-		vim.keymap.set("n", "<leader>ha", function()
-			harpoon:list():append()
-		end, { desc = "[H]arpoon [A]dd" })
-		vim.keymap.set("n", "<leader>he", function()
-			harpoon.ui:toggle_quick_menu(harpoon:list())
-		end, { desc = "[H]arpoon ui" })
-		vim.keymap.set("n", "<leader>h1", function()
-			harpoon:list():select(1)
-		end, { desc = "[H]arpoon file 1" })
-		vim.keymap.set("n", "<leader>h2", function()
-			harpoon:list():select(2)
-		end, { desc = "[H]arpoon file 2" })
-		vim.keymap.set("n", "<leader>h3", function()
-			harpoon:list():select(3)
-		end, { desc = "[H]arpoon file 3" })
-		vim.keymap.set("n", "<leader>hp", function()
-			harpoon:list():prev()
-		end, { desc = "[H]arpoon [P]rev" })
-		vim.keymap.set("n", "<leader>hn", function()
-			harpoon:list():next()
-		end, { desc = "[H]arpoon [N]ext" })
-	end,
+		{ "<leader>h1", "<cmd>Grapple select index=1<cr>", desc = "Select first tag" },
+		{ "<leader>h2", "<cmd>Grapple select index=2<cr>", desc = "Select second tag" },
+		{ "<leader>h3", "<cmd>Grapple select index=3<cr>", desc = "Select third tag" },
+		{ "<leader>h4", "<cmd>Grapple select index=4<cr>", desc = "Select fourth tag" },
+
+		{ "<leader>hp", "<cmd>Grapple cycle backward<cr>", desc = "Go to previous tag" },
+		{ "<leader>hn", "<cmd>Grapple cycle forward<cr>", desc = "Go to next tag" },
+
+		{
+			"<C-a>",
+			function()
+				local Oil = require("oil")
+				local filename = Oil.get_cursor_entry().name
+				local directory = Oil.get_current_dir()
+
+				local Grapple = require("grapple")
+				local Path = require("grapple.path")
+				Grapple.toggle({ path = Path.join(directory, filename) })
+			end,
+			desc = "Tag under cursor",
+		},
+	},
 }

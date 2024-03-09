@@ -28,7 +28,13 @@ return {
 			},
 			sections = {
 				lualine_a = { "mode" },
-				lualine_b = { "branch" },
+				lualine_b = {
+					"branch",
+					{
+						require("grapple").statusline,
+						cond = require("grapple").exists,
+					},
+				},
 
 				lualine_c = {
 					{

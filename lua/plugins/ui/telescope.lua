@@ -138,6 +138,7 @@ return {
 		})
 		pcall(require("telescope").load_extension, "fzf")
 		pcall(require("telescope").load_extension, "dap")
+		pcall(require("telescope").load_extension, "grapple")
 	end,
 	keys = keymaps,
 }

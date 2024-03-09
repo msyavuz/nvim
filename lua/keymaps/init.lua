@@ -25,10 +25,6 @@ keymap.set("n", "<leader>rln", function()
 	vim.opt.number = true
 end, { desc = "Relative line numbers" })
 
--- Increment/Decrement
-keymap.set("n", "+", "<C-a>")
-keymap.set("n", "-", "<C-x>")
-
 -- Copy file
 keymap.set("n", "<C-c>", "<cmd>%y+<CR>")
 
