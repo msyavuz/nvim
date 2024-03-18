@@ -69,7 +69,7 @@ return {
 					includeAutomaticOptionalChainCompletions = true,
 					includeCompletionsWithClassMemberSnippets = true,
 					includeCompletionsWithInsertText = true,
-					importModuleSpecifierPreference = "relative",
+					importModuleSpecifierPreference = "non-relative",
 					importModuleSpecifierEnding = "minimal",
 					provideRefactorNotApplicableReason = true,
 					allowRenameOfImportPath = true,

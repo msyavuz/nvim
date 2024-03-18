@@ -31,7 +31,7 @@ local options = {
 			prepend_args = { "--config", "/home/msyavuz/.config/defaults/.sql.json" },
 		},
 		prettier = {
-			prepend_args = { "--tab-width", 4 },
+			-- prepend_args = { "--tab-width", 4 },
 		},
 		clang_format = {
 			prepend_args = { "--style=file:/home/msyavuz/.config/defaults/.clang-format" },
