@@ -1,4 +1,5 @@
 local keymaps = {
+	{ ":", "<cmd>Telescope cmdline<cr>", desc = "Cmdline" },
 	{
 		"<leader>ff",
 		function()
@@ -120,11 +121,11 @@ return {
 				return vim.fn.executable("make") == 1
 			end,
 		},
-		{
-			"nvim-telescope/telescope-dap.nvim",
-		},
+		"nvim-telescope/telescope-dap.nvim",
+		"jonarrien/telescope-cmdline.nvim",
 	},
 	config = function()
+		local extensions = { "fzf", "dap", "grapple", "cmdline" }
 		require("telescope").setup({
 			defaults = {
 				mappings = {
@@ -136,9 +137,9 @@ return {
 				sorting_strategy = "ascending",
 			},
 		})
-		pcall(require("telescope").load_extension, "fzf")
-		pcall(require("telescope").load_extension, "dap")
-		pcall(require("telescope").load_extension, "grapple")
+		for _, extension in ipairs(extensions) do
+			require("telescope").load_extension(extension)
+		end
 	end,
 	keys = keymaps,
 }

@@ -7,7 +7,6 @@ return {
 		scope = "git_branch",
 	},
 	keys = {
-		{ "<leader>ha", "<cmd>Grapple toggle<cr>", desc = "Tag a file" },
 		{ "<C-e>", "<cmd>Grapple toggle_tags<cr>", desc = "Toggle tags menu" },
 
 		{ "<leader>hf", "<cmd>Telescope grapple tags<cr>", desc = "Find in tags" },
@@ -21,15 +20,22 @@ return {
 		{ "<leader>hn", "<cmd>Grapple cycle forward<cr>", desc = "Go to next tag" },
 
 		{
+			-- If in oil.nvim buffer use the oil file path else just toggle
 			"<C-a>",
 			function()
-				local Oil = require("oil")
-				local filename = Oil.get_cursor_entry().name
-				local directory = Oil.get_current_dir()
-
+				local filetype = vim.bo.filetype
 				local Grapple = require("grapple")
 				local Path = require("grapple.path")
-				Grapple.toggle({ path = Path.join(directory, filename) })
+
+				if filetype == "oil" then
+					local Oil = require("oil")
+					local filename = Oil.get_cursor_entry().name
+					local directory = Oil.get_current_dir()
+
+					Grapple.toggle({ path = Path.join(directory, filename) })
+				else
+					Grapple.toggle()
+				end
 			end,
 			desc = "Tag under cursor",
 		},
