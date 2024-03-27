@@ -30,7 +30,6 @@ return {
 
 	"neovim/nvim-lspconfig",
 	dependencies = {
-		"folke/neodev.nvim",
 		"b0o/schemastore.nvim",
 		-- Auto install servers
 		{
@@ -91,7 +90,7 @@ return {
 		lspconfig.emmet_language_server.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			filetypes = { "html", "css", "angular" },
+			filetypes = { "html", "css", "angular", "heex" },
 		})
 
 		lspconfig.pyright.setup({
@@ -116,13 +115,23 @@ return {
 		lspconfig.tailwindcss.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			filetypes = { "templ", "astro", "react", "htmldjango", "angular" },
-			init_options = { userLanguages = { templ = "html", angular = "html" } },
+			filetypes = { "templ", "astro", "react", "htmldjango", "angular", "heex" },
+			init_options = { userLanguages = { templ = "html", angular = "html", heex = "html" } },
+			root_dir = function(fname)
+				local root_pattern = require("lspconfig").util.root_pattern(
+					"tailwind.config.cjs",
+					"tailwind.config.js",
+					"postcss.config.js",
+					"assets/tailwind.config.cjs",
+					"assets/tailwind.config.js"
+				)
+				return root_pattern(fname)
+			end,
 		})
 		lspconfig.html.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			filetypes = { "html", "templ", "angular" },
+			filetypes = { "html", "templ", "angular", "heex" },
 		})
 
 		lspconfig.htmx.setup({
