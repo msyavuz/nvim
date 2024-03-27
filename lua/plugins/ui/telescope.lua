@@ -1,5 +1,4 @@
 local keymaps = {
-	{ ":", "<cmd>Telescope cmdline<cr>", desc = "Cmdline" },
 	{
 		"<leader>ff",
 		function()
@@ -122,10 +121,10 @@ return {
 			end,
 		},
 		"nvim-telescope/telescope-dap.nvim",
-		"jonarrien/telescope-cmdline.nvim",
+		"debugloop/telescope-undo.nvim",
 	},
 	config = function()
-		local extensions = { "fzf", "dap", "grapple", "cmdline" }
+		local extensions = { "fzf", "dap", "grapple", "undo" }
 		require("telescope").setup({
 			defaults = {
 				mappings = {
@@ -143,3 +142,4 @@ return {
 	end,
 	keys = keymaps,
 }
+
