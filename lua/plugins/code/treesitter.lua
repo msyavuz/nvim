@@ -11,6 +11,7 @@ return {
 		--templ
 		"vrischmann/tree-sitter-templ",
 	},
+
 	build = ":TSUpdate",
 	config = function()
 		vim.defer_fn(function()
@@ -40,12 +41,16 @@ return {
 						lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
 						keymaps = {
 							-- You can use the capture groups defined in textobjects.scm
-							["aa"] = "@parameter.outer",
-							["ia"] = "@parameter.inner",
+							["ia"] = "@attribute.inner",
+							["aa"] = "@attribute.outer",
+							["ap"] = "@parameter.outer",
+							["ip"] = "@parameter.inner",
 							["af"] = "@function.outer",
 							["if"] = "@function.inner",
 							["ac"] = "@class.outer",
 							["ic"] = "@class.inner",
+							["al"] = "@loop.outer",
+							["il"] = "@loop.inner",
 						},
 					},
 					move = {
