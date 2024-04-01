@@ -7,13 +7,14 @@ local servers = {
 	"csharp_ls",
 	"dockerls",
 	"emmet_language_server",
-	"elixirls",
+	-- "elixirls",
 	"eslint",
 	"gopls",
 	"gdscript",
 	"html",
 	"htmx",
 	"jsonls",
+	"lexical",
 	"lua_ls",
 	"pyright",
 	"sqlls",
@@ -149,6 +150,15 @@ return {
 					validate = { enable = true },
 				},
 			},
+		})
+
+		lspconfig.lexical.setup({
+			filetypes = { "elixir", "eelixir", "heex" },
+			cmd = { "/home/msyavuz/.local/share/nvim/mason/bin/lexical" },
+			settings = {},
+			root_dir = function(fname)
+				return lspconfig.util.root_pattern("mix.exs", ".git")(fname) or vim.loop.os_homedir()
+			end,
 		})
 	end,
 }
