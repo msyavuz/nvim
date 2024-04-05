@@ -84,7 +84,7 @@ return {
 			on_attach = on_attach,
 			capabilities = capabilities,
 			cmd = { "ngserver", "--stdio", "--tsProbeLocations", "", "--ngProbeLocations", "" },
-			filetypes = { "typescript", "html", "typescriptreact", "typescript.tsx", "angular" },
+			filetypes = { "typescript", "html", "angular" },
 			root_dir = lspconfig.util.root_pattern("angular.json"),
 		})
 

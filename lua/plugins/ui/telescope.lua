@@ -127,6 +127,10 @@ return {
 		local extensions = { "fzf", "dap", "grapple", "undo" }
 		require("telescope").setup({
 			defaults = {
+				preview = {
+					filesize_limit = 0.9,
+					timeout = 250,
+				},
 				mappings = {
 					i = {
 						["<C-u>"] = false,
@@ -142,4 +146,3 @@ return {
 	end,
 	keys = keymaps,
 }
-
