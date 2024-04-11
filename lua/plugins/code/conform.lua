@@ -6,7 +6,7 @@ local prettier_langs = {
 	"css",
 	"html",
 	"json",
-	"svelte",
+	-- "svelte",
 	"angular",
 	"astro",
 }
