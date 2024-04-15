@@ -14,7 +14,7 @@ local prettier_langs = {
 local options = {
 	log_level = vim.log.levels.INFO,
 	format_on_save = {
-		timeout_ms = 500,
+		timeout_ms = 900,
 		lsp_fallback = true,
 		async = true,
 	},
@@ -25,6 +25,9 @@ local options = {
 		go = { "goimports", "gofumpt" },
 		sh = { "shfmt" },
 		zsh = { "shfmt" },
+		heex = { "mix" },
+		elixir = { "mix" },
+		eelixir = { "mix" },
 	},
 	formatters = {
 		sql_formatter = {
