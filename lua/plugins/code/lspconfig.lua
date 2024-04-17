@@ -121,6 +121,7 @@ return {
 			root_dir = function(fname)
 				local root_pattern = require("lspconfig").util.root_pattern(
 					"tailwind.config.cjs",
+					"tailwind.config.mjs",
 					"tailwind.config.js",
 					"postcss.config.js",
 					"assets/tailwind.config.cjs",

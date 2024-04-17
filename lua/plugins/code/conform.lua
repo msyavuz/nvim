@@ -12,9 +12,8 @@ local prettier_langs = {
 }
 
 local options = {
-	log_level = vim.log.levels.INFO,
+	-- log_level = vim.log.levels.INFO,
 	format_on_save = {
-		timeout_ms = 900,
 		lsp_fallback = true,
 		async = true,
 	},
@@ -33,9 +32,9 @@ local options = {
 		sql_formatter = {
 			prepend_args = { "--config", "/home/msyavuz/.config/defaults/.sql.json" },
 		},
-		prettier = {
-			-- prepend_args = { "--tab-width", 4 },
-		},
+		-- prettier = {
+		-- 	-- prepend_args = { "--tab-width", 4 },
+		-- },
 		clang_format = {
 			prepend_args = { "--style=file:/home/msyavuz/.config/defaults/.clang-format" },
 		},
