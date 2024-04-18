@@ -9,6 +9,9 @@
 
 ## Install Instructions
 
+ > [!NOTE]
+ > There are 3 branches. I am currently on slim branch which is without ui plugins like dressing and noice.
+
  > Install requires Neovim 0.9+. Always review the code before installing a configuration.
 
 Clone the repository and install the plugins:
