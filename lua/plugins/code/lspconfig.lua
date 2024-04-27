@@ -7,17 +7,18 @@ local servers = {
 	"csharp_ls",
 	"dockerls",
 	"emmet_language_server",
-	"elixirls",
+	-- "elixirls",
 	"eslint",
-	"gopls",
 	"gdscript",
+	"gleam",
+	"gopls",
 	"html",
 	"htmx",
 	"jsonls",
-	-- "lexical",
+	"lexical",
 	"lua_ls",
 	"pyright",
-	"sqlls",
+	"sqls",
 	"svelte",
 	"tailwindcss",
 	"taplo",
@@ -52,8 +53,8 @@ return {
 
 		for _, lsp in ipairs(servers) do
 			lspconfig[lsp].setup({
-				on_attach = on_attach,
-				capabilities = capabilities,
+				-- on_attach = on_attach,
+				-- capabilities = capabilities,
 			})
 		end
 
@@ -116,13 +117,23 @@ return {
 		lspconfig.tailwindcss.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			filetypes = { "templ", "astro", "react", "htmldjango", "angular", "heex" },
+			filetypes = {
+				"templ",
+				"astro",
+				"react",
+				"htmldjango",
+				"angular",
+				"heex",
+				"javascriptreact",
+				"typescriptreact",
+			},
 			init_options = { userLanguages = { templ = "html", angular = "html", heex = "html" } },
 			root_dir = function(fname)
 				local root_pattern = require("lspconfig").util.root_pattern(
 					"tailwind.config.cjs",
 					"tailwind.config.mjs",
 					"tailwind.config.js",
+					"tailwind.config.ts",
 					"postcss.config.js",
 					"assets/tailwind.config.cjs",
 					"assets/tailwind.config.js"
@@ -153,13 +164,13 @@ return {
 			},
 		})
 
-		-- lspconfig.lexical.setup({
-		-- 	filetypes = { "elixir", "eelixir", "heex" },
-		-- 	cmd = { "/home/msyavuz/.local/share/nvim/mason/bin/lexical" },
-		-- 	settings = {},
-		-- 	root_dir = function(fname)
-		-- 		return lspconfig.util.root_pattern("mix.exs", ".git")(fname) or vim.loop.os_homedir()
-		-- 	end,
-		-- })
+		lspconfig.lexical.setup({
+			filetypes = { "elixir", "eelixir", "heex" },
+			cmd = { "/home/msyavuz/.local/share/nvim/mason/bin/lexical" },
+			settings = {},
+			root_dir = function(fname)
+				return lspconfig.util.root_pattern("mix.exs", ".git")(fname) or vim.loop.os_homedir()
+			end,
+		})
 	end,
 }
