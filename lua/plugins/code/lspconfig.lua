@@ -17,6 +17,7 @@ local servers = {
 	"jsonls",
 	"lexical",
 	"lua_ls",
+	"mdx_analyzer",
 	"pyright",
 	"sqls",
 	"svelte",

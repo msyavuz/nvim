@@ -8,11 +8,11 @@ local prettier_langs = {
 	"json",
 	-- "svelte",
 	"angular",
-	"astro",
+	-- "astro",
 }
 
 local options = {
-	-- log_level = vim.log.levels.INFO,
+	-- log_level = vim.log.levels.DEBUG,
 	format_on_save = {
 		lsp_fallback = true,
 		async = true,

@@ -100,16 +100,9 @@ return {
 		})
 
 		vim.treesitter.language.register("templ", "templ")
+		vim.treesitter.language.register("markdown", "mdx")
 
 		--angular
-		vim.filetype.add({
-			extension = {
-				html = "angular",
-			},
-			pattern = {
-				["*.component.html"] = "angular",
-			},
-		})
 
 		require("nvim-ts-autotag").setup({
 			filetypes = {

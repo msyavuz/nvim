@@ -69,6 +69,12 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 vim.filetype.add({
 	extension = {
+		mdx = "mdx",
+	},
+})
+
+vim.filetype.add({
+	extension = {
 		templ = "templ",
 	},
 	pattern = {
@@ -80,20 +86,6 @@ vim.filetype.add({
 })
 local filetype_group = vim.api.nvim_create_augroup("FiletypeChange", { clear = true })
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
-	-- callback = function(bufnr)
-	-- 	--templates
-	-- 	vim.filetype.add({
-	-- 		extension = {
-	-- 			templ = "templ",
-	-- 		},
-	-- 		pattern = {
-	-- 			["*/templates/**/*.html"] = {
-	-- 				priority = math.huge,
-	-- 				"htmldjango",
-	-- 			},
-	-- 		},
-	-- 	})
-	-- end,
 	group = filetype_group,
 	pattern = "*/templates/**/*.html",
 	command = "set filetype=htmldjango",
