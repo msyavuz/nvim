@@ -13,10 +13,11 @@ local prettier_langs = {
 
 local options = {
 	-- log_level = vim.log.levels.DEBUG,
-	format_on_save = {
+	format_after_save = {
 		lsp_fallback = true,
 		async = true,
 	},
+
 	formatters_by_ft = {
 		lua = { "stylua" },
 		python = { "isort", "black" },
@@ -28,6 +29,7 @@ local options = {
 		elixir = { "mix" },
 		eelixir = { "mix" },
 	},
+
 	formatters = {
 		sql_formatter = {
 			prepend_args = { "--config", "/home/msyavuz/.config/defaults/.sql.json" },
