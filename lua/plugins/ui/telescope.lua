@@ -87,20 +87,6 @@ local keymaps = {
 		end,
 		desc = "[F]ind [r]esume",
 	},
-	{
-		"<leader>flb",
-		function()
-			require("telescope").extensions.dap.list_breakpoints({})
-		end,
-		desc = "[F]ind [l]ist of [b]reakpoints",
-	},
-	{
-		"<leader>flv",
-		function()
-			require("telescope").extensions.dap.variables({})
-		end,
-		desc = "[F]ind [l]ist of [v]ariables",
-	},
 }
 
 return {
@@ -120,11 +106,10 @@ return {
 				return vim.fn.executable("make") == 1
 			end,
 		},
-		"nvim-telescope/telescope-dap.nvim",
 		"debugloop/telescope-undo.nvim",
 	},
 	config = function()
-		local extensions = { "fzf", "dap", "grapple", "undo" }
+		local extensions = { "fzf", "grapple", "undo" }
 		require("telescope").setup({
 			defaults = {
 				preview = {

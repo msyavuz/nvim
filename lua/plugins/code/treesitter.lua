@@ -16,10 +16,6 @@ return {
 	config = function()
 		vim.defer_fn(function()
 			require("nvim-treesitter.configs").setup({
-				autotag = {
-					enable = true,
-					enable_close_on_slash = false,
-				},
 				auto_install = true,
 				sync_install = false,
 				ignore_install = {},
@@ -86,25 +82,15 @@ return {
 			})
 		end, 0)
 
-		--templ
-		local treesitter_parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-		treesitter_parser_config.templ = {
-			install_info = {
-				url = "https://github.com/vrischmann/tree-sitter-templ.git",
-				files = { "src/parser.c", "src/scanner.c" },
-				branch = "master",
-			},
-		}
 		require("treesitter-context").setup({
 			max_lines = 1,
 		})
 
-		vim.treesitter.language.register("templ", "templ")
-		vim.treesitter.language.register("markdown", "mdx")
-
 		--angular
 
 		require("nvim-ts-autotag").setup({
+			enable = true,
+			enable_close_on_slash = false,
 			filetypes = {
 				"angular",
 				"html",

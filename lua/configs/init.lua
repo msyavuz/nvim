@@ -37,12 +37,15 @@ opt.completeopt = "menuone,noselect"
 opt.termguicolors = true
 
 -- Tabwidth
-opt.shiftwidth = 4
-opt.tabstop = 4
-opt.softtabstop = 4
+opt.shiftwidth = 2
+opt.tabstop = 2
+opt.softtabstop = 2
 opt.expandtab = true
 
 opt.scrolloff = 16
+
+-- For Oil.nvim preview split
+opt.splitright = true
 
 -- Center
 -- Reference: http://vim.wikia.com/wiki/Keep_your_cursor_centered_vertically_on_the_screen

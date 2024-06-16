@@ -64,7 +64,7 @@ M.icons = {
 	},
 }
 
-M.on_attach = function(_, bufnr)
+M.on_attach = function(client, bufnr)
 	local nmap = function(keys, func, desc)
 		if desc then
 			desc = "LSP: " .. desc

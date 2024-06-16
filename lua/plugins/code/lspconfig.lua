@@ -2,36 +2,27 @@ local servers = {
 	"angularls",
 	"astro",
 	"bashls",
-	"clangd",
 	"cssls",
-	"csharp_ls",
 	"dockerls",
 	"emmet_language_server",
 	-- "elixirls",
 	"eslint",
-	"gdscript",
-	"gleam",
 	"gopls",
 	"html",
-	"htmx",
 	"jsonls",
 	"lexical",
 	"lua_ls",
-	"mdx_analyzer",
 	"pyright",
-	"sqls",
 	"svelte",
 	"tailwindcss",
-	"taplo",
-	"templ",
 	"tsserver",
 	"ruff_lsp",
-	"rust_analyzer",
 }
 
 return {
 
 	"neovim/nvim-lspconfig",
+	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
 		"b0o/schemastore.nvim",
 		-- Auto install servers
@@ -54,8 +45,8 @@ return {
 
 		for _, lsp in ipairs(servers) do
 			lspconfig[lsp].setup({
-				-- on_attach = on_attach,
-				-- capabilities = capabilities,
+				on_attach = on_attach,
+				capabilities = capabilities,
 			})
 		end
 
@@ -64,20 +55,20 @@ return {
 			capabilities = capabilities,
 			init_options = {
 				preferences = {
-					quotePreference = "double",
-					includeCompletionsForModuleExports = true,
-					includeCompletionsForImportStatements = true,
-					includeCompletionsWithSnippetText = true,
-					includeAutomaticOptionalChainCompletions = true,
-					includeCompletionsWithClassMemberSnippets = true,
-					includeCompletionsWithInsertText = true,
-					importModuleSpecifierPreference = "non-relative",
-					importModuleSpecifierEnding = "minimal",
-					provideRefactorNotApplicableReason = true,
-					allowRenameOfImportPath = true,
-					allowTextChangesInNewFiles = true,
-					displayPartsForJSDoc = true,
-					generateReturnInDocTemplate = true,
+					-- quotePreference = "double",
+					includeCompletionsForModuleExports = false,
+					-- includeCompletionsForImportStatements = true,
+					-- includeCompletionsWithSnippetText = true,
+					-- includeAutomaticOptionalChainCompletions = true,
+					-- includeCompletionsWithClassMemberSnippets = true,
+					-- includeCompletionsWithInsertText = true,
+					-- importModuleSpecifierPreference = "non-relative",
+					-- importModuleSpecifierEnding = "minimal",
+					-- provideRefactorNotApplicableReason = true,
+					-- allowRenameOfImportPath = true,
+					-- allowTextChangesInNewFiles = true,
+					-- displayPartsForJSDoc = true,
+					-- generateReturnInDocTemplate = true,
 				},
 			},
 		})
