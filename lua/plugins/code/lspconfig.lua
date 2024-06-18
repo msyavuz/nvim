@@ -16,7 +16,6 @@ local servers = {
 	"svelte",
 	"tailwindcss",
 	"tsserver",
-	"ruff_lsp",
 }
 
 return {
