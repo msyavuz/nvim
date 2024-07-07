@@ -1,3 +1,10 @@
+local get_venv_command = function(command)
+	if vim.env.VIRTUAL_ENV then
+		return vim.env.VIRTUAL_ENV .. "/bin/" .. command
+	else
+		return command
+	end
+end
 local prettier_langs = {
 	"javascript",
 	"typescript",
@@ -35,7 +42,7 @@ local options = {
 
 	formatters_by_ft = {
 		lua = { "stylua" },
-		python = { "isort", "black" },
+		python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
 		gdscript = { "gdformat" },
 		go = { "goimports", "gofumpt" },
 		heex = { "mix" },
@@ -52,6 +59,9 @@ local options = {
 		-- },
 		clang_format = {
 			prepend_args = { "--style=file:/home/msyavuz/.config/defaults/.clang-format" },
+		},
+		black = {
+			command = get_venv_command("black"),
 		},
 	},
 }
