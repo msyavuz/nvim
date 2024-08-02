@@ -48,6 +48,7 @@ local options = {
 		heex = { "mix" },
 		elixir = { "mix" },
 		eelixir = { "mix" },
+		rust = { "rustfmt" },
 	},
 
 	formatters = {

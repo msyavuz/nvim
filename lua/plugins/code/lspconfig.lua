@@ -13,6 +13,7 @@ local servers = {
 	"lexical",
 	"lua_ls",
 	"pyright",
+	"rust-analyzer",
 	"svelte",
 	"tailwindcss",
 	"tsserver",

@@ -86,7 +86,7 @@ return {
 			max_lines = 1,
 		})
 
-		--angular
+		vim.treesitter.language.register("markdown", "mdx")
 
 		require("nvim-ts-autotag").setup({
 			enable = true,
