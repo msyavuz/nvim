@@ -1,7 +1,7 @@
 return {
-    "zeioth/garbage-day.nvim",
-    event = "BufEnter",
-    opts = {
-        notifications = true,
-    },
+	"zeioth/garbage-day.nvim",
+	event = "BufEnter",
+	opts = {
+		notifications = true,
+	},
 }

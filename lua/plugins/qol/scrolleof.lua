@@ -1,7 +1,7 @@
 return {
-    "Aasim-A/scrollEOF.nvim",
-    opts = {
-        pattern = "*",
-        insert_mode = true,
-    },
+	"Aasim-A/scrollEOF.nvim",
+	opts = {
+		pattern = "*",
+		insert_mode = true,
+	},
 }
