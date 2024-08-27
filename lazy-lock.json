@@ -25,7 +25,6 @@
   "mini.pairs": { "branch": "main", "commit": "927d19cbdd0e752ab1c7eed87072e71d2cd6ff51" },
   "mini.surround": { "branch": "main", "commit": "d8913ed23be0a1a4585ae34414821cc343a46174" },
   "nvim-cmp": { "branch": "main", "commit": "ae644feb7b67bf1ce4260c231d1d4300b19c6f30" },
-  "nvim-colorizer.lua": { "branch": "master", "commit": "194ec600488f7c7229668d0e80bd197f3a2b84ff" },
   "nvim-jdtls": { "branch": "master", "commit": "99e4b2081de1d9162666cc7b563cbeb01c26b66b" },
   "nvim-lint": { "branch": "master", "commit": "debabca63c0905b59ce596a55a8e33eafdf66342" },
   "nvim-lspconfig": { "branch": "master", "commit": "2a6f00ff66e276ab3289be8bb9f844f7ab385848" },

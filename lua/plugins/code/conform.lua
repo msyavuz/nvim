@@ -55,9 +55,6 @@ local options = {
 		sql_formatter = {
 			prepend_args = { "--config", "/home/msyavuz/.config/defaults/.sql.json" },
 		},
-		-- prettier = {
-		-- 	-- prepend_args = { "--tab-width", 4 },
-		-- },
 		clang_format = {
 			prepend_args = { "--style=file:/home/msyavuz/.config/defaults/.clang-format" },
 		},
