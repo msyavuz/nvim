@@ -9,6 +9,7 @@ local servers = {
 	"eslint",
 	"gopls",
 	"html",
+	"jinja_lsp",
 	"jsonls",
 	"lexical",
 	"lua_ls",
@@ -49,29 +50,6 @@ return {
 				capabilities = capabilities,
 			})
 		end
-
-		lspconfig.tsserver.setup({
-			on_attach = on_attach,
-			capabilities = capabilities,
-			init_options = {
-				preferences = {
-					-- quotePreference = "double",
-					includeCompletionsForModuleExports = false,
-					-- includeCompletionsForImportStatements = true,
-					-- includeCompletionsWithSnippetText = true,
-					-- includeAutomaticOptionalChainCompletions = true,
-					-- includeCompletionsWithClassMemberSnippets = true,
-					-- includeCompletionsWithInsertText = true,
-					-- importModuleSpecifierPreference = "non-relative",
-					-- importModuleSpecifierEnding = "minimal",
-					-- provideRefactorNotApplicableReason = true,
-					-- allowRenameOfImportPath = true,
-					-- allowTextChangesInNewFiles = true,
-					-- displayPartsForJSDoc = true,
-					-- generateReturnInDocTemplate = true,
-				},
-			},
-		})
 
 		lspconfig.angularls.setup({
 			on_attach = on_attach,
@@ -139,11 +117,11 @@ return {
 			filetypes = { "html", "templ", "angular", "heex" },
 		})
 
-		lspconfig.htmx.setup({
-			on_attach = on_attach,
-			capabilities = capabilities,
-			filetypes = { "html", "templ" },
-		})
+		-- lspconfig.htmx.setup({
+		-- 	on_attach = on_attach,
+		-- 	capabilities = capabilities,
+		-- 	filetypes = { "html", "templ" },
+		-- })
 
 		lspconfig.jsonls.setup({
 			on_attach = on_attach,
@@ -161,6 +139,7 @@ return {
 			cmd = { "/home/msyavuz/.local/share/nvim/mason/bin/lexical" },
 			settings = {},
 			root_dir = function(fname)
+				---@diagnostic disable-next-line: undefined-field
 				return lspconfig.util.root_pattern("mix.exs", ".git")(fname) or vim.loop.os_homedir()
 			end,
 		})
