@@ -50,18 +50,6 @@ local options = {
 		eelixir = { "mix" },
 		rust = { "rustfmt" },
 	},
-
-	formatters = {
-		sql_formatter = {
-			prepend_args = { "--config", "/home/msyavuz/.config/defaults/.sql.json" },
-		},
-		clang_format = {
-			prepend_args = { "--style=file:/home/msyavuz/.config/defaults/.clang-format" },
-		},
-		black = {
-			command = get_venv_command("black"),
-		},
-	},
 }
 
 for _, lang in ipairs(prettier_langs) do
