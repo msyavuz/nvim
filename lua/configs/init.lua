@@ -33,7 +33,6 @@ opt.timeoutlen = 300
 -- Set completeopt to have a better completion experience
 opt.completeopt = "menuone,noselect"
 
--- NOTE: You should make sure your terminal supports this
 opt.termguicolors = true
 
 -- Tabwidth
@@ -46,16 +45,6 @@ opt.scrolloff = 16
 
 -- For Oil.nvim preview split
 opt.splitright = true
-
--- Center
--- Reference: http://vim.wikia.com/wiki/Keep_your_cursor_centered_vertically_on_the_screen
--- local group = vim.api.nvim_create_augroup("VCenterCursor", { clear = true })
---
--- vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter", "WinNew", "VimResized" }, {
---     group = group,
---     pattern = { "*", "*.*" },
---     command = "let &scrolloff=(winheight(win_getid())/2) + 1",
--- })
 
 opt.clipboard = "unnamedplus"
 
@@ -93,6 +82,3 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
 	pattern = "*/templates/**/*.html",
 	command = "set filetype=htmldjango",
 })
-
--- vim.g.loaded_netrwPlugin = 1
--- vim.g.loaded_netrw = 1
