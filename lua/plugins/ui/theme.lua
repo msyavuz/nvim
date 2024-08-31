@@ -32,6 +32,11 @@ return {
 					fg = c.bg_dark,
 				}
 			end,
+			styles = {
+				keywords = { italic = false },
+				functions = { italic = false },
+				variables = { italic = false },
+			},
 		})
 		vim.cmd([[colorscheme tokyonight]])
 	end,
