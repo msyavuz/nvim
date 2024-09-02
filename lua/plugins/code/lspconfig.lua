@@ -15,7 +15,6 @@ local servers = {
 	"lua_ls",
 	"pyright",
 	"nginx_language_server",
-	"rust-analyzer",
 	"svelte",
 	"tailwindcss",
 	"tsserver",
@@ -35,7 +34,7 @@ return {
 		{
 			"williamboman/mason-lspconfig.nvim",
 			opts = {
-				automatic_installation = false,
+				automatic_installation = true,
 			},
 		},
 	},
