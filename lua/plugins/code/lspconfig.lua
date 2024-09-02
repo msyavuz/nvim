@@ -14,6 +14,7 @@ local servers = {
 	"lexical",
 	"lua_ls",
 	"pyright",
+	"nginx_language_server",
 	"rust-analyzer",
 	"svelte",
 	"tailwindcss",
