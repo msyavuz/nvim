@@ -111,6 +111,7 @@ return {
 					{ name = "path" },
 					{ name = "buffer" },
 				},
+				{ name = "neorg" },
 			}),
 			sorting = {
 				-- NOTE: Would be cool to add stuff like "See variable names before method names" in rust, or something like that.
