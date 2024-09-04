@@ -17,7 +17,7 @@ local servers = {
 	"nginx_language_server",
 	"svelte",
 	"tailwindcss",
-	"tsserver",
+	-- "tsserver",
 }
 
 return {
