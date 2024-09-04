@@ -35,3 +35,9 @@ keymap.set("i", "kj", "<ESC>", { desc = "Exit insert mode" })
 -- Paste last yanked register
 keymap.set("n", ",p", '"0p', { desc = "Paste last yanked register" })
 keymap.set("n", ",P", '"0P', { desc = "Paste last yanked register" })
+
+-- When highligh pasting keep the yank buffer
+keymap.set("x", "<leader>p", [["_dP]])
+
+-- Change the word under cursor interactive
+keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
