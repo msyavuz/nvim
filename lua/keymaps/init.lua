@@ -21,8 +21,8 @@ keymap.set("n", "<tab>", "<cmd>b#<cr>", { desc = "Switch to last buffer" })
 
 -- Switch relative line numbers
 keymap.set("n", "<leader>rln", function()
-	vim.wo.relativenumber = not vim.wo.relativenumber
-	vim.opt.number = true
+  vim.wo.relativenumber = not vim.wo.relativenumber
+  vim.opt.number = true
 end, { desc = "Relative line numbers" })
 
 -- Copy file
@@ -41,3 +41,6 @@ keymap.set("x", "<leader>p", [["_dP]])
 
 -- Change the word under cursor interactive
 keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- Copy current files relative filepath
+keymap.set("n", "<C-p>", "<cmd>!echo % | cb<CR>", { silent = true, script = true })
