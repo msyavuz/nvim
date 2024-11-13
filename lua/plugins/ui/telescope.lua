@@ -67,9 +67,17 @@ local keymaps = {
     desc = "[F]ind [h]help",
   },
   {
-    "<leader>fw",
+    "<leader>faw",
     function()
       require("telescope.builtin").grep_string()
+    end,
+    desc = "[F]ind current [w]ord",
+  },
+
+  {
+    "<leader>fw",
+    function()
+      require("telescope.builtin").grep_string({ grep_open_files = true })
     end,
     desc = "[F]ind current [w]ord",
   },
@@ -87,6 +95,51 @@ local keymaps = {
     end,
     desc = "[F]ind [r]esume",
   },
+  {
+    "gr",
+    function()
+      require("telescope.builtin").lsp_references({ show_line = false })
+    end,
+    desc = "[G]oto [r]eferences",
+  },
+  {
+    "gd",
+    function()
+      require("telescope.builtin").lsp_definitions({ show_line = false })
+    end,
+    desc = "[G]oto [d]efinitions",
+  },
+
+  {
+    "gI",
+    function()
+      require("telescope.builtin").lsp_implementations({ show_line = false })
+    end,
+    desc = "[G]oto [I]mplementations",
+  },
+  {
+    "<leader>D",
+    function()
+      require("telescope.builtin").lsp_type_definitions({ show_line = false })
+    end,
+    desc = "Type [D]efinition",
+  },
+
+  {
+    "<leader>ds",
+    function()
+      require("telescope.builtin").lsp_document_symbols({ show_line = false })
+    end,
+    desc = "[D]ocument [S]ymbols",
+  },
+  {
+    "<leader>ws",
+    function()
+      require("telescope.builtin").lsp_dynamic_workspace_symbols({ show_line = false })
+    end,
+    desc = "[W]orkspace [S]ymbols",
+  },
+
 }
 
 return {
@@ -112,6 +165,9 @@ return {
     local extensions = { "fzf", "grapple", "undo" }
     require("telescope").setup({
       defaults = {
+        layout_config = {
+          width = 0.9,
+        },
         preview = {
           filesize_limit = 0.9,
           timeout = 250,

@@ -16,7 +16,6 @@ keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page down" })
 keymap.set("n", "<leader>fv", require("oil").open, { desc = "Open directory" })
 
 -- Quick buffer switch
-
 keymap.set("n", "<tab>", "<cmd>b#<cr>", { desc = "Switch to last buffer" })
 
 -- Switch relative line numbers
