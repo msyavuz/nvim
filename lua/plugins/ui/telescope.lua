@@ -32,9 +32,16 @@ local keymaps = {
     desc = "[F]ind [q]uickfix list",
   },
   {
-    "<leader>fo",
+    "<leader>fch",
     function()
-      require("telescope.builtin").oldfiles()
+      require("telescope.builtin").command_history()
+    end,
+    desc = "[F]ind [r]ecent files",
+  },
+  {
+    "<leader>fxh",
+    function()
+      require("telescope.builtin").search_history()
     end,
     desc = "[F]ind [r]ecent files",
   },
