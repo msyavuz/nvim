@@ -1,23 +1,16 @@
 local servers = {
-  "angularls",
   "astro",
-  "bashls",
+  "biome",
   "cssls",
   "csharp_ls",
   "dockerls",
-  "emmet_language_server",
   -- "elixirls",
   "eslint",
   "gopls",
-  "html",
   "jinja_lsp",
-  "jsonls",
-  "lexical",
   "lua_ls",
   "nginx_language_server",
-  "pyright",
   "svelte",
-  "tailwindcss",
   "rust_analyzer",
   -- "tsserver",
 }
@@ -57,7 +50,7 @@ return {
       on_attach = on_attach,
       capabilities = capabilities,
       cmd = { "ngserver", "--stdio", "--tsProbeLocations", "", "--ngProbeLocations", "" },
-      filetypes = { "typescript", "html", "angular" },
+      filetypes = { "typescript", "html", "angular", "htmlangular" },
       root_dir = lspconfig.util.root_pattern("angular.json"),
     })
 
@@ -65,6 +58,9 @@ return {
       on_attach = on_attach,
       capabilities = capabilities,
       filetypes = { "html", "css", "angular", "heex" },
+      init_options = {
+        showExpandedAbbreviation = "inMarkupAndStylesheetFilesOnly",
+      },
     })
 
     lspconfig.pyright.setup({

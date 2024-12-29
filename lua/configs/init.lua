@@ -48,37 +48,48 @@ opt.splitright = true
 
 opt.clipboard = "unnamedplus"
 
+-- Remove tilde on end of buffers
+opt.fillchars = { eob = " " }
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
-	callback = function()
-		vim.highlight.on_yank()
-	end,
-	group = highlight_group,
-	pattern = "*",
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+  group = highlight_group,
+  pattern = "*",
 })
 
 vim.filetype.add({
-	extension = {
-		mdx = "mdx",
-	},
+  extension = {
+    mdx = "mdx",
+  },
 })
 
 vim.filetype.add({
-	extension = {
-		templ = "templ",
-	},
-	pattern = {
-		["*/templates/**/*.html"] = {
-			priority = math.huge,
-			"htmldjango",
-		},
-	},
+  extension = {
+    templ = "templ",
+  },
+  pattern = {
+    ["*/templates/**/*.html"] = {
+      priority = math.huge,
+      "htmldjango",
+    },
+  },
 })
 local filetype_group = vim.api.nvim_create_augroup("FiletypeChange", { clear = true })
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
-	group = filetype_group,
-	pattern = "*/templates/**/*.html",
-	command = "set filetype=htmldjango",
+  group = filetype_group,
+  pattern = "*/templates/**/*.html",
+  command = "set filetype=htmldjango",
+})
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "typescriptreact",
+  callback = function()
+    vim.lsp.stop_client(vim.lsp.get_clients({
+      name = "emmet_language_server",
+    }))
+  end,
 })
