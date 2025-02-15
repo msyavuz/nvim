@@ -107,7 +107,6 @@ return {
           -- end,
         },
         {
-
           { name = "path" },
           { name = "buffer" },
         },

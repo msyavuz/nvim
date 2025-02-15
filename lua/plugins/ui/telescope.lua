@@ -95,6 +95,13 @@ local keymaps = {
     end,
     desc = "[F]ind [k]eymaps",
   },
+  {
+    "<leader>fp",
+    function()
+      require("telescope.builtin").spell_suggest()
+    end,
+    desc = "[F]ind s[p]ell suggestions",
+  },
   --- LSP
   {
     "gr",
