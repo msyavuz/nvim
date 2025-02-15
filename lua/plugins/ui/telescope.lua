@@ -80,7 +80,6 @@ local keymaps = {
     end,
     desc = "[F]ind [r]esume",
   },
-
   {
     "<leader>fu",
     function()
@@ -146,7 +145,11 @@ return {
     "debugloop/telescope-undo.nvim",
   },
   config = function()
-    local extensions = { "fzf", "grapple", "undo" }
+    local extensions = {
+      "fzf",
+      "grapple",
+      "undo",
+    }
     require("telescope").setup({
       defaults = {
         layout_config = {

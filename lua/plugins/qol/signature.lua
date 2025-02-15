@@ -9,6 +9,7 @@ return {
         local bufnr = args.buf
         require("lsp_signature").on_attach({
           floating_window = false,
+          hint_enable = false,
         }, bufnr)
       end,
     })
