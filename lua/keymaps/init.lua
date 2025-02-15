@@ -43,3 +43,14 @@ keymap.set("x", "<leader>p", [["_dP]])
 
 -- Copy current files relative filepath
 keymap.set("n", "<C-p>", "<cmd>!echo % | cb<CR>", { silent = true, script = true })
+
+-- Remove some keybindings
+local keymaps_to_disable = {
+  "grn",
+  "gra",
+  "gri",
+  "grr",
+}
+for _, value in ipairs(keymaps_to_disable) do
+  keymap.set("n", value, "<nop>", { silent = true })
+end

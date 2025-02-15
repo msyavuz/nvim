@@ -2,6 +2,8 @@ local servers = {
   "astro",
   "biome",
   "cssls",
+  "css_variables",
+  "cssmodules_ls",
   "csharp_ls",
   "dockerls",
   -- "elixirls",

@@ -12,6 +12,9 @@ return {
         return (name == "..")
       end,
     },
+    keymaps = {
+      ["gs"] = false
+    }
   },
   -- Optional dependencies
   dependencies = { "nvim-tree/nvim-web-devicons", "echasnovski/mini.icons" },

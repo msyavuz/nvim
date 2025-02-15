@@ -32,20 +32,6 @@ local keymaps = {
     desc = "[F]ind [q]uickfix list",
   },
   {
-    "<leader>fch",
-    function()
-      require("telescope.builtin").command_history()
-    end,
-    desc = "[F]ind [r]ecent files",
-  },
-  {
-    "<leader>fxh",
-    function()
-      require("telescope.builtin").search_history()
-    end,
-    desc = "[F]ind [r]ecent files",
-  },
-  {
     "<leader>fb",
     function()
       require("telescope.builtin").buffers()
@@ -74,14 +60,6 @@ local keymaps = {
     desc = "[F]ind [h]help",
   },
   {
-    "<leader>faw",
-    function()
-      require("telescope.builtin").grep_string()
-    end,
-    desc = "[F]ind current [w]ord",
-  },
-
-  {
     "<leader>fw",
     function()
       require("telescope.builtin").grep_string({ grep_open_files = true })
@@ -102,6 +80,22 @@ local keymaps = {
     end,
     desc = "[F]ind [r]esume",
   },
+
+  {
+    "<leader>fu",
+    function()
+      require("telescope").extensions.undo.undo()
+    end,
+    desc = "[F]ind [u]ndo",
+  },
+  {
+    "<leader>fk",
+    function()
+      require("telescope.builtin").keymaps()
+    end,
+    desc = "[F]ind [k]eymaps",
+  },
+  --- LSP
   {
     "gr",
     function()
@@ -116,7 +110,6 @@ local keymaps = {
     end,
     desc = "[G]oto [d]efinitions",
   },
-
   {
     "gI",
     function()
@@ -124,29 +117,6 @@ local keymaps = {
     end,
     desc = "[G]oto [I]mplementations",
   },
-  {
-    "<leader>D",
-    function()
-      require("telescope.builtin").lsp_type_definitions({ show_line = false })
-    end,
-    desc = "Type [D]efinition",
-  },
-
-  {
-    "<leader>ds",
-    function()
-      require("telescope.builtin").lsp_document_symbols({ show_line = false })
-    end,
-    desc = "[D]ocument [S]ymbols",
-  },
-  {
-    "<leader>ws",
-    function()
-      require("telescope.builtin").lsp_dynamic_workspace_symbols({ show_line = false })
-    end,
-    desc = "[W]orkspace [S]ymbols",
-  },
-
 }
 
 return {
