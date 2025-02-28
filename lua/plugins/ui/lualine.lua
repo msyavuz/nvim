@@ -60,7 +60,12 @@ return {
         lualine_x = {
 
           "lsp_progress",
-          { current_signature, cond = function() return require('lsp_signature').status_line().label ~= '' end },
+          {
+            current_signature,
+            cond = function()
+              return vim.fn.mode() == 'i' and require('lsp_signature').status_line().label ~= ''
+            end
+          },
           {
             "filetype",
             icon_only = false,

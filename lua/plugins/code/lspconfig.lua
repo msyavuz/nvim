@@ -15,6 +15,7 @@ local servers = {
   "svelte",
   "rust_analyzer",
   -- "tsserver",
+  "zls",
 }
 
 return {
