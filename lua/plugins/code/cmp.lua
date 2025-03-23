@@ -22,9 +22,10 @@ return {
         {
           "rafamadriz/friendly-snippets",
           config = function()
+            local ls = require("luasnip")
             require("luasnip.loaders.from_vscode").lazy_load()
-            require("luasnip").filetype_extend("heex", { "eelixir" })
-            require("luasnip").filetype_extend("elixir", { "eelixir" })
+            ls.filetype_extend("heex", { "eelixir" })
+            ls.filetype_extend("elixir", { "eelixir" })
           end,
         },
       },

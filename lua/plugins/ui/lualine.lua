@@ -13,19 +13,11 @@ return {
   end,
   dependencies = {
     "arkav/lualine-lsp-progress",
-    "ray-x/lsp_signature.nvim",
   },
   opts = function()
     -- PERF: we don't need this lualine require madness 🤷
     local lualine_require = require("lualine_require")
     lualine_require.require = require
-    local current_signature = function()
-      local sig = require('lsp_signature').status_line()
-      if sig.hint ~= '' then
-        return sig.hint
-      end
-      return ''
-    end
     local icons = require("constants").icons
     vim.o.laststatus = vim.g.lualine_laststatus
 
@@ -60,12 +52,6 @@ return {
         lualine_x = {
 
           "lsp_progress",
-          {
-            current_signature,
-            cond = function()
-              return vim.fn.mode() == 'i' and require('lsp_signature').status_line().label ~= ''
-            end
-          },
           {
             "filetype",
             icon_only = false,

@@ -4,7 +4,8 @@ return {
   opts = {
     settings = {
       tsserver_file_preferences = {
-        importModuleSpecifierPreference = "non-relative"
+        importModuleSpecifierPreference = "non-relative",
+        importModuleSpecifierEnding = "minimal"
       }
     }
   },

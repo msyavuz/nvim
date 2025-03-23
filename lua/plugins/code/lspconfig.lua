@@ -1,6 +1,7 @@
 local servers = {
   "astro",
   "biome",
+  "clangd",
   "cssls",
   "css_variables",
   "cssmodules_ls",
