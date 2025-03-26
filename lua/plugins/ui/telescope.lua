@@ -74,6 +74,13 @@ local keymaps = {
     desc = "[Fs] Find by grep",
   },
   {
+    "<leader>fn",
+    function()
+      require("telescope").extensions.live_grep_args.live_grep_args()
+    end,
+    desc = "[Fn] Find with args"
+  },
+  {
     "<leader>fr",
     function()
       require("telescope.builtin").resume()
@@ -134,6 +141,12 @@ return {
     -- Only load if `make` is available. Make sure you have the system
     -- requirements installed.
     {
+      "nvim-telescope/telescope-live-grep-args.nvim",
+      -- This will not install any breaking changes.
+      -- For major updates, this must be adjusted manually.
+      version = "^1.0.0",
+    },
+    {
       "nvim-telescope/telescope-fzf-native.nvim",
       -- NOTE: If you are having trouble with this installation,
       --       refer to the README for telescope-fzf-native for more instructions.
@@ -149,6 +162,7 @@ return {
       "fzf",
       "grapple",
       "undo",
+      "live_grep_args",
     }
     require("telescope").setup({
       defaults = {
