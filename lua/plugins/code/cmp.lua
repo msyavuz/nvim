@@ -1,6 +1,5 @@
 return {
   'saghen/blink.cmp',
-  optional = true,
   event = "InsertEnter",
   dependencies = {
     'rafamadriz/friendly-snippets',
@@ -8,17 +7,26 @@ return {
   version = '1.*',
   opts = {
     keymap = {
-      preset = 'enter',
       ['<Tab>'] = { 'select_next', 'fallback' },
       ['<S-Tab>'] = { 'select_prev', 'fallback' },
+      ['<CR>'] = { 'accept', 'fallback' }
     },
     appearance = {
       nerd_font_variant = 'mono'
     },
+    cmdline = {
+      enabled = false
+    },
     completion = {
       documentation = { auto_show = true },
       trigger = {
-        show_on_insert_on_trigger_character = true
+        show_on_insert_on_trigger_character = true,
+        prefetch_on_insert = true
+      },
+      list = {
+        selection = {
+          preselect = true,
+        }
       },
       menu = {
         auto_show = true,
@@ -34,9 +42,10 @@ return {
       default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
       providers = {
         lazydev = {
+          enabled = true,
           name = "LazyDev",
           module = "lazydev.integrations.blink",
-          score_offset = 100,
+          score_offset = 90,
         },
       },
     },
