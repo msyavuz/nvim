@@ -15,7 +15,7 @@ local servers = {
   "nginx_language_server",
   "svelte",
   "rust_analyzer",
-  -- "tsserver",
+  "ts_ls",
   "zls",
 }
 
