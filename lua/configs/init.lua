@@ -93,3 +93,27 @@ vim.api.nvim_create_autocmd("FileType", {
     }))
   end,
 })
+
+vim.lsp.enable({
+  "angular_ls",
+  "astro",
+  "astro_ls",
+  "bash_ls",
+  "biome_ls",
+  "clangd",
+  "csharp_ls",
+  "css_ls",
+  "css_variables_ls",
+  "cssmodules_ls",
+  "docker_ls",
+  "emmet_language_server",
+  "eslint_ls",
+  "gopls",
+  "html_ls",
+  "json_ls",
+  "lexical",
+  "lua_ls",
+  "pyright",
+  "tailwindcss_ls",
+  "ts_ls",
+})
