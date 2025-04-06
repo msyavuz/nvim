@@ -11,9 +11,6 @@ return {
       vim.o.laststatus = 0
     end
   end,
-  dependencies = {
-    "arkav/lualine-lsp-progress",
-  },
   opts = function()
     -- PERF: we don't need this lualine require madness 🤷
     local lualine_require = require("lualine_require")
@@ -51,7 +48,6 @@ return {
         },
         lualine_x = {
 
-          "lsp_progress",
           {
             "filetype",
             icon_only = false,

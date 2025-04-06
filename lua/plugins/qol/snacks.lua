@@ -6,7 +6,12 @@ return {
     bigfile = { enabled = true },
     gitbrowse = { enabled = true },
     words = { enabled = true },
-    zen = { enabled = true }
+    zen = { enabled = true },
+    notifier = {
+      enabled = true,
+      margin = { bottom = 1 },
+      top_down = false,
+    }
   },
   keys = {
     { "<leader>gb", function() Snacks.gitbrowse() end,                     desc = "Browser git repository", mode = { "n" } },

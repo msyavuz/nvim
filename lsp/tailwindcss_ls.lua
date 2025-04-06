@@ -1,11 +1,44 @@
 --- @type vim.lsp.Config
 return {
-  cmd = { "bash-language-server", "start" },
-  filetypes = { "sh", "zsh" },
-  root_markers = { ".git" },
+  cmd = { "tailwindcss-language-server", "--stdio" },
+  filetypes = {
+    "aspnetcorerazor", "astro", "astro-markdown", "blade", "clojure", "django-html", "htmldjango", "edge", "eelixir",
+    "elixir", "ejs", "erb", "eruby", "gohtml", "gohtmltmpl", "haml", "handlebars", "hbs", "html", "htmlangular",
+    "html-eex", "heex", "jade", "leaf", "liquid", "markdown", "mdx", "mustache", "njk", "nunjucks", "php", "razor",
+    "slim", "twig", "css", "less", "postcss", "sass", "scss", "stylus", "sugarss", "javascript", "javascriptreact",
+    "reason", "rescript", "typescript", "typescriptreact", "vue", "svelte", "templ"
+  },
   settings = {
-    bashIde = {
-      globPattern = vim.env.GLOB_PATTERN or '*@(.sh|.inc|.bash|.command)',
+    tailwindCSS = {
+      validate = true,
+      lint = {
+        cssConflict = 'warning',
+        invalidApply = 'error',
+        invalidScreen = 'error',
+        invalidVariant = 'error',
+        invalidConfigPath = 'error',
+        invalidTailwindDirective = 'error',
+        recommendedVariantOrder = 'warning',
+      },
+      classAttributes = {
+        'class',
+        'className',
+        'class:list',
+        'classList',
+        'ngClass',
+      },
+      includeLanguages = {
+        eelixir = 'html-eex',
+        eruby = 'erb',
+        templ = 'html',
+        htmlangular = 'html',
+      },
     },
+  },
+  root_markers = {
+    'tailwind.config.js',
+    'tailwind.config.cjs',
+    'tailwind.config.mjs',
+    'tailwind.config.ts',
   },
 }

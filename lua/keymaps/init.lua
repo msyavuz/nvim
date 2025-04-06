@@ -54,3 +54,8 @@ local keymaps_to_disable = {
 for _, value in ipairs(keymaps_to_disable) do
   keymap.set("n", value, "<nop>", { silent = true })
 end
+
+-- Code actions
+keymap.set("n", "<leader>ca", function()
+  vim.lsp.buf.code_action()
+end, { desc = "Code action" })
