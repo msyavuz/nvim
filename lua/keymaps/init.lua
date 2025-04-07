@@ -42,7 +42,14 @@ keymap.set("x", "<leader>p", [["_dP]])
 -- keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- Copy current files relative filepath
-keymap.set("n", "<C-p>", "<cmd>!echo % | cb<CR>", { silent = true, script = true })
+keymap.set("n", "<C-p>",
+  function()
+    local relative_path = vim.fn.expand("%:~:.")
+    vim.fn.setreg("+", relative_path)
+    vim.notify('Copied relative path: ' .. relative_path, vim.log.levels.INFO)
+  end,
+  { desc = "Copy current file relative path", silent = true }
+)
 
 -- Remove some keybindings
 local keymaps_to_disable = {

@@ -95,7 +95,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.lsp.enable({
-  "angular_ls",
+  -- "angular_ls",
   "astro",
   "astro_ls",
   "bash_ls",
@@ -120,18 +120,6 @@ vim.lsp.enable({
 
 vim.diagnostic.config({ virtual_text = true })
 
-function GetActiveLSPs()
-  local clients = vim.lsp.get_active_clients({ bufnr = 0 })
-  if #clients == 0 then
-    return "No LSP"
-  end
-  local names = {}
-  for _, client in ipairs(clients) do
-    table.insert(names, client.name)
-  end
-  return table.concat(names, ", ")
-end
-
 -- Autocommands
 local ag = vim.api.nvim_create_augroup
 local au = vim.api.nvim_create_autocmd
@@ -146,7 +134,6 @@ au({ "BufNewFile", "BufRead" }, {
   end,
   group = disable_node_modules_eslint_group,
 })
-
 
 --- Lsp Progress
 ---@type table<number, {token:lsp.ProgressToken, msg:string, done:boolean}[]>

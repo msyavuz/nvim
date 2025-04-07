@@ -47,7 +47,6 @@ return {
           { "filename", path = 1 },
         },
         lualine_x = {
-
           {
             "filetype",
             icon_only = false,
