@@ -6,4 +6,9 @@ return {
   init_options = {
     providerFormatter = true,
   },
+  settings = {
+    css = { validate = true },
+    scss = { validate = true },
+    less = { validate = true },
+  }
 }

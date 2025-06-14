@@ -98,6 +98,7 @@ vim.lsp.enable({
   -- "angular_ls",
   "astro",
   "astro_ls",
+  "ansible_ls",
   "bash_ls",
   "biome_ls",
   "clangd",
@@ -118,7 +119,7 @@ vim.lsp.enable({
   "ts_ls",
 })
 
-vim.diagnostic.config({ virtual_text = true })
+vim.diagnostic.config({ virtual_text = true, float = { source = true } })
 
 -- Autocommands
 local ag = vim.api.nvim_create_augroup
@@ -130,7 +131,7 @@ local disable_node_modules_eslint_group =
 au({ "BufNewFile", "BufRead" }, {
   pattern = { "**/node_modules/**", "node_modules", "/node_modules/*" },
   callback = function()
-    vim.diagnostic.disable(0)
+    vim.diagnostic.enable(false)
   end,
   group = disable_node_modules_eslint_group,
 })

@@ -54,6 +54,9 @@ return {
         enabled = true,
       },
     },
+    {
+      "mfussenegger/nvim-dap-python",
+    },
   },
 
   config = function()
@@ -102,6 +105,7 @@ return {
 
       }
     end
+    require("dap-python").setup("uv")
   end,
   keys = {
     { "<leader>dB", function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, desc = "Breakpoint Condition" },

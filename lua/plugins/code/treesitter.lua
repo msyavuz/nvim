@@ -8,8 +8,6 @@ return {
     --context
     "nvim-treesitter/nvim-treesitter-context",
 
-    --templ
-    "vrischmann/tree-sitter-templ",
   },
 
   build = ":TSUpdate",
