@@ -1,3 +1,39 @@
+local required_parsers = {
+  "bash",
+  "dockerfile",
+  "gitcommit",
+  "gitignore",
+  "go",
+  "gomod",
+  "gosum",
+  "html",
+  "htmldjango",
+  "ini",
+  "javascript",
+  "json",
+  "jsonc",
+  "lua",
+  "make",
+  "markdown",
+  "markdown_inline",
+  "python",
+  "query",
+  "regex",
+  "rst",
+  "scss",
+  "styled",
+  "tmux",
+  "toml",
+  "tsx",
+  "typescript",
+  "vim",
+  "vimdoc",
+  "xml",
+  "yaml",
+  "yuck",
+  "zig",
+}
+
 return {
   -- Highlight, edit, and navigate code
   "nvim-treesitter/nvim-treesitter",
@@ -13,11 +49,12 @@ return {
   build = ":TSUpdate",
   config = function()
     vim.defer_fn(function()
+      ---@diagnostic disable-next-line: missing-fields
       require("nvim-treesitter.configs").setup({
+        ensure_installed = required_parsers,
         auto_install = true,
         sync_install = false,
         ignore_install = {},
-
         indent = { enable = false },
         highlight = { enable = true },
         incremental_selection = {
@@ -57,6 +94,7 @@ return {
 
     vim.treesitter.language.register("markdown", "mdx")
 
+    ---@diagnostic disable-next-line: missing-fields
     require("nvim-ts-autotag").setup({
       enable = true,
       enable_close_on_slash = false,

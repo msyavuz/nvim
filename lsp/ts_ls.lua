@@ -1,3 +1,7 @@
+---
+local npm_root = vim.fn.trim(vim.fn.system("npm root -g"))
+print("NPM Global Root: " .. npm_root)
+
 ---@type vim.lsp.Config
 return {
   cmd = { "typescript-language-server", "--stdio" },
@@ -7,11 +11,11 @@ return {
     plugins = {
       {
         name = "typescript-eslint",
-        location = "typescript-eslint",
+        location = npm_root .. "/typescript-eslint",
       },
       {
         name = "@styled/typescript-styled-plugin",
-        location = "@styled/typescript-styled-plugin",
+        location = npm_root .. "/@styled/typescript-styled-plugin",
       }
     },
     hostInfo = "neovim",
