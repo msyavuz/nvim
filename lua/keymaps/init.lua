@@ -11,6 +11,7 @@ keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnosti
 -- Center
 keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half page up" })
 keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page down" })
+keymap.set("n", "G", "Gzz", { desc = "Go to end of file" })
 
 -- Oil
 keymap.set("n", "<leader>fv", require("oil").open, { desc = "Open directory" })
