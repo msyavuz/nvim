@@ -14,14 +14,18 @@ return {
     },
     scratch = {
       enabled = true,
+      filekey = {
+        cwd = true,
+        branch = true,
+      }
     }
   },
   keys = {
-    { "<leader>gb", function() Snacks.gitbrowse() end,                     desc = "Browser git repository",  mode = { "n" } },
-    { "]]",         function() Snacks.words.jump(vim.v.count1, true) end,  desc = "Next Reference",          mode = { "n", "t" } },
-    { "[[",         function() Snacks.words.jump(-vim.v.count1, true) end, desc = "Prev Reference",          mode = { "n", "t" } },
-    { "<leader>z",  function() Snacks.zen() end,                           desc = "Toggle Zen Mode" },
-    { "<leader>nn", function() Snacks.scratch() end,                       desc = "New Scratch Buffer" },
-    { "<leader>nN", function() Snacks.scratch({ new = true }) end,         desc = "New Scratch Buffer (new)" },
+    { "<leader>gb", function() Snacks.gitbrowse() end,                     desc = "Browser git repository", mode = { "n" } },
+    { "]]",         function() Snacks.words.jump(vim.v.count1, true) end,  desc = "Next Reference",         mode = { "n", "t" } },
+    { "[[",         function() Snacks.words.jump(-vim.v.count1, true) end, desc = "Prev Reference",         mode = { "n", "t" } },
+    { "<leader>z",  function() Snacks.zen() end,                           desc = "Toggle Zen Mode",        mode = { "n" } },
+    { "<leader>nn", function() Snacks.scratch() end,                       desc = "New Scratch Buffer",     mode = { "n" } },
+    { "<leader>nN", function() Snacks.scratch.select() end,                desc = "Select Scratch Buffer",  mode = { "n" } },
   }
 }

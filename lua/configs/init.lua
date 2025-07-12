@@ -41,12 +41,14 @@ opt.tabstop = 2
 opt.softtabstop = 2
 opt.expandtab = true
 
+opt.conceallevel = 1
+
 opt.scrolloff = 16
 
 -- For Oil.nvim preview split
 opt.splitright = true
 
-opt.clipboard = "unnamedplus"
+opt.clipboard = "unnamed,unnamedplus"
 
 -- Remove tilde on end of buffers
 opt.fillchars = { eob = " " }
@@ -116,7 +118,7 @@ vim.lsp.enable({
   "lua_ls",
   "pyright",
   "tailwindcss_ls",
-  "ts_ls",
+  -- "ts_ls",
 })
 
 vim.diagnostic.config({ virtual_text = true, float = { source = true } })

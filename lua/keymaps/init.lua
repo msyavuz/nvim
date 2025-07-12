@@ -67,3 +67,7 @@ end
 keymap.set("n", "<leader>ca", function()
   vim.lsp.buf.code_action()
 end, { desc = "Code action" })
+
+-- keymap.set("n", "<leader>cr", function()
+--   vim.lsp.buf.rename()
+-- end, { desc = "Rename symbol" })
