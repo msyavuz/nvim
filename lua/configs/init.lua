@@ -118,7 +118,7 @@ vim.lsp.enable({
   "lua_ls",
   "pyright",
   "tailwindcss_ls",
-  -- "ts_ls",
+  "ts_ls",
 })
 
 vim.diagnostic.config({ virtual_text = true, float = { source = true } })
