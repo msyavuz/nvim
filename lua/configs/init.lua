@@ -53,6 +53,8 @@ opt.clipboard = "unnamed,unnamedplus"
 -- Remove tilde on end of buffers
 opt.fillchars = { eob = " " }
 
+opt.backupcopy = "yes"
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
@@ -68,6 +70,12 @@ vim.filetype.add({
   extension = {
     mdx = "mdx",
   },
+})
+
+vim.filetype.add({
+  pattern = {
+    [".env.*"] = "sh",
+  }
 })
 
 vim.filetype.add({
@@ -96,30 +104,6 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-vim.lsp.enable({
-  -- "angular_ls",
-  "astro",
-  "astro_ls",
-  "ansible_ls",
-  "bash_ls",
-  "biome_ls",
-  "clangd",
-  "csharp_ls",
-  "css_ls",
-  "css_variables_ls",
-  "cssmodules_ls",
-  "docker_ls",
-  "emmet_language_server",
-  "eslint_ls",
-  "gopls",
-  "html_ls",
-  "json_ls",
-  "lexical",
-  "lua_ls",
-  "pyright",
-  "tailwindcss_ls",
-  "ts_ls",
-})
 
 vim.diagnostic.config({ virtual_text = true, float = { source = true } })
 
@@ -182,4 +166,46 @@ au("LspProgress", {
       end,
     })
   end,
+})
+vim.lsp.config('expert', {
+  cmd = { 'expert' },
+  root_markers = { 'mix.exs', '.git' },
+  filetypes = { 'elixir', 'eelixir', 'heex' },
+})
+
+vim.filetype.add({
+  filename = {
+    ["docker-compose.yml"] = "yaml.docker-compose",
+    ["docker-compose.yaml"] = "yaml.docker-compose",
+    ["compose.yml"] = "yaml.docker-compose",
+    ["compose.yaml"] = "yaml.docker-compose",
+  },
+})
+
+vim.lsp.enable({
+  -- "angular_ls",
+  "astro",
+  "astro_ls",
+  "ansible_ls",
+  "bash_ls",
+  "biome",
+  "clangd",
+  "csharp_ls",
+  "cssls",
+  "css_variables_ls",
+  "cssmodules_ls",
+  "docker_language_server",
+  "docker_compose_language_service",
+  "dockerls",
+  "emmet_language_server",
+  -- "eslint_ls",
+  "gopls",
+  "html_ls",
+  "jsonls",
+  "expert",
+  "lua_ls",
+  "pyright",
+  "tailwindcss",
+  "ts_ls",
+  "yamlls",
 })

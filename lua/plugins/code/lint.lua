@@ -6,16 +6,16 @@ return {
       -- gitcommit = { "commitlint" },
       python = { "ruff" },
       ["yaml.ansible"] = { "ansible_lint" },
-      javascript = { "eslint" },
-      javascriptreact = { "eslint" },
-      typescript = { "eslint" },
-      typescriptreact = { "eslint" },
-      json = { "eslint" },
+      javascript = { "biomejs", "eslint" },
+      javascriptreact = { "biomejs", "eslint" },
+      typescript = { "biomejs", "eslint" },
+      typescriptreact = { "biomejs", "eslint" },
+      json = { "biomejs", "eslint" },
     }
 
     vim.api.nvim_create_autocmd({ "BufWritePost" }, {
       callback = function()
-        require("lint").try_lint()
+        require("lint").try_lint(nil, { ignore_errors = true })
       end,
     })
   end,
