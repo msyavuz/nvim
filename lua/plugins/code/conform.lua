@@ -44,7 +44,8 @@ local options = {
     rust = { "rustfmt" },
     ruby = { "standardrb" },
     php = { "easy-coding-standard" },
-    blade = { "blade-formatter" }
+    blade = { "blade-formatter" },
+    nix = { "nixfmt" },
   },
 }
 
