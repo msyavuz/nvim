@@ -221,4 +221,5 @@ vim.lsp.enable({
   "tailwindcss",
   "ts_ls",
   "yamlls",
+  "zls",
 })
