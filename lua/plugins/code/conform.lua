@@ -11,6 +11,7 @@ local prettier_langs = {
   -- "astro",
 }
 local slow_format_filetypes = {}
+
 local options = {
   log_level = vim.log.levels.DEBUG,
   format_on_save = function(bufnr)
@@ -50,7 +51,7 @@ local options = {
 }
 
 for _, lang in ipairs(prettier_langs) do
-  options.formatters_by_ft[lang] = { "prettier" }
+  options.formatters_by_ft[lang] = { "biome", "prettier", stop_after_first = true }
 end
 
 return {

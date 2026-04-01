@@ -180,6 +180,17 @@ return {
           },
         },
         sorting_strategy = "ascending",
+        vimgrep_arguments = {
+          "rg",
+          "--color=never",
+          "--no-heading",
+          "--with-filename",
+          "--line-number",
+          "--column",
+          "--smart-case",
+          "--glob",
+          "!.git/",
+        },
       },
     })
     for _, extension in ipairs(extensions) do
