@@ -38,7 +38,9 @@ au("BufEnter", {
 au("FileType", {
   pattern = "typescriptreact",
   callback = function()
-    vim.lsp.stop_client(vim.lsp.get_clients({ name = "emmet_language_server" }))
+    for _, client in ipairs(vim.lsp.get_clients({ name = "emmet_language_server" })) do
+      client:stop()
+    end
   end,
 })
 
