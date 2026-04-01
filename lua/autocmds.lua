@@ -34,16 +34,6 @@ au("BufEnter", {
   command = "set filetype=htmldjango",
 })
 
--- Disable emmet for tsx
-au("FileType", {
-  pattern = "typescriptreact",
-  callback = function()
-    for _, client in ipairs(vim.lsp.get_clients({ name = "emmet_language_server" })) do
-      client:stop()
-    end
-  end,
-})
-
 -- Disable diagnostics in node_modules
 au({ "BufNewFile", "BufRead" }, {
   group = ag("DisableNodeModulesEslint", { clear = true }),
@@ -95,19 +85,6 @@ au("LspProgress", {
       end,
     })
   end,
-})
-
--- Hyprland LSP
-au({ 'BufEnter', 'BufWinEnter' }, {
-  pattern = { "hyprlang" },
-  callback = function(event)
-    print(string.format("starting hyprls for %s", vim.inspect(event)))
-    vim.lsp.start {
-      name = "hyprlang",
-      cmd = { "hyprls" },
-      root_dir = vim.fn.getcwd(),
-    }
-  end
 })
 
 -- ScrollOffEOF
